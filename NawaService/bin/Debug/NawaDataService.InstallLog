@@ -1,0 +1,536 @@
+﻿Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaData Service...
+Service NawaData Service has been successfully installed.
+Creating EventLog source NawaData Service in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Warning: The source NawaDataService is not registered on the local machine.
+Service NawaDataService is being removed from the system...
+An exception occurred during the uninstallation of the System.ServiceProcess.ServiceInstaller installer.
+System.ComponentModel.Win32Exception: The specified service does not exist as an installed service
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+Uninstalling assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Uninstalling assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaData Service.
+Service NawaData Service is being removed from the system...
+Service NawaData Service was successfully removed from the system.
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Attempt to stop service NawaDataService.
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Attempt to stop service NawaDataService.
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Attempt to stop service NawaDataService.
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Uninstalling assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+An exception occurred during the uninstallation of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: Requested registry access is not allowed.
+An exception occurred while uninstalling. This exception will be ignored and the uninstall will continue. However, the application might not be fully uninstalled after the uninstall is complete.
+Installing assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+Installing assembly 'D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing assembly 'F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing assembly 'F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataServiceCAS...
+Service NawaDataServiceCAS has been successfully installed.
+Creating EventLog source NawaDataServiceCAS in log Application...
+Committing assembly 'F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing assembly 'D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing assembly 'D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.exe
+Uninstalling assembly 'D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.exe
+Removing EventLog source NawaDataService.
+Service NawaDataService is being removed from the system...
+Service NawaDataService was successfully removed from the system.
+Installing assembly 'D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Creating EventLog source NawaDataService in log Application...
+Rolling back assembly 'D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Restoring event log to previous state for source NawaDataService.
+An exception occurred during the Rollback phase of the System.Diagnostics.EventLogInstaller installer.
+System.Security.SecurityException: The source was not found, but some or all event logs could not be searched.  Inaccessible logs: Security.
+An exception occurred during the Rollback phase of the installation. This exception will be ignored and the rollback will continue. However, the machine might not fully revert to its initial state after the rollback is complete.
+Installing assembly 'D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe
+Installing service NawaDataService...
+Service NawaDataService has been successfully installed.
+Creating EventLog source NawaDataService in log Application...
+Committing assembly 'D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.InstallLog
+   assemblypath = D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe

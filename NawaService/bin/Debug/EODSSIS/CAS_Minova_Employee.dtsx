@@ -1,0 +1,2134 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/30/2017 12:33:33 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="SUKMCASHDEV"
+  DTS:CreatorName="SUKMCASHDEV\advance"
+  DTS:DTSID="{069CD3B5-630D-416F-87F7-00B5E281429E}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5058.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="CAS_Minova_Employee"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{E93DF9A3-FE88-4200-8D0A-F2FDDC233403}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Destination_CAS]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{CA313008-A76C-4C50-B773-D70D0B572BB4}"
+      DTS:ObjectName="Destination_CAS">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.9.71.54;User ID=sa;Initial Catalog=CAS;Provider=SQLNCLI11.1;Persist Security Info=True;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXcL/Hckg90qasvBVEw/LZgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD4x0uoTtgzGJB4TEizCkM1qL2gRBlEBXRK1BIFOZuAbQAAAAAOgAAAAAIAACAAAAA4E1AYAEoSMqTSJ9F4xnBDby74B45xYN2OLA6W+qOnCiAAAADRSZDV+kRl2RJAfxu+Bau490hxsYfrtSzP6MpIvQeJMUAAAAAj5HCr/W2+KsOSmi6ltbIpEWXhxxGnIfOoGCJF05mwLY8P3n97JjPeQKPltedeQZLkWT3PcYz8iY/NdI+peHUM</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ETLConfiguration]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F3718945-8086-448C-96F0-85C82717F283}"
+      DTS:ObjectName="ETLConfiguration">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.9.71.54;User ID=sa;Initial Catalog=CAS;Provider=SQLOLEDB.1;Persist Security Info=True;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXcL/Hckg90qasvBVEw/LZgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACxVhleRnyFqMSphKt/HAqayj9dbJuApMTy9bLBL19dnwAAAAAOgAAAAAIAACAAAABvHXzcrq6YRH1K8h28oWIvEWSk1BOBroRFudQ5R2ESRSAAAAAyOf/QX5GizLQC+eHv5W3WzedHXh+nhC/4lrgbzN7XeUAAAABY4mKErgxRbV6ZTRI0DzP8WRaD6VW9lIr/Ef//BHc3iytXSO59veMZVxaHPM2dpIC7UlEB5x6CH1xcdw/Dx6SD</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Source_STAGING_HC]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{16EB06FF-7CDE-44A4-8DA4-EBF2E6656890}"
+      DTS:ObjectName="Source_STAGING_HC">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.50.234.43;User ID=sa;Initial Catalog=minovastaging;Provider=SQLNCLI11.1;Persist Security Info=True;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAXcL/Hckg90qasvBVEw/LZgAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACIsvuhD399TVmRYL+h2124JfzxeoGgc531SC9+vc1ccQAAAAAOgAAAAAIAACAAAAALRLQNd5D8rWuWMQPkG2zds0ew3Q2GY5mTBpiTk3cG8iAAAACylHpnrbzV75p9hdw39oH2x78Sv/d7/FOfUKl5d2erAkAAAACvcg628/rgdCblC+FT6HB7leLUMkaBKg2D5qY8VWUYt9xR3Q7QPLgtqMwzFBTIewu2VjJMuEaBblQb95sQH7P4</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="CAS"
+      DTS:ConfigurationType="2"
+      DTS:ConfigurationVariable="\Package.Connections[ETLConfiguration].Properties[ConnectionString]"
+      DTS:CreationName=""
+      DTS:DTSID="{DFB2B749-9881-4B18-9234-02E25AE6E301}"
+      DTS:ObjectName="ETLConfiguration" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ETLConfiguration&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;Destination_CAS&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{57EE5B18-80E0-43CE-A930-C60709B6034B}"
+      DTS:ObjectName="Destination_CAS" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ETLConfiguration&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;Source_STAGING_HC&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{432C75A1-03F3-41AD-A099-CBF20C27D5D2}"
+      DTS:ObjectName="Source_STAGING_HC" />
+  </DTS:Configurations>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Download Minova - employee"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{05652492-6513-4A6B-88E7-7E17FF29F94B}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Download Minova - employee"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination STG_MINOVA_Karyawan"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[STG_MINOVA_Karyawan]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Destination_CAS]"
+                  connectionManagerRefId="Package.ConnectionManagers[Destination_CAS]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[landscape]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="landscape"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[landscape]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[landscape]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[emp_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="emp_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[fullname]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="fullname"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[fullname]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[fullname]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[company_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="company_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[company_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[company_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[company_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="company_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[company_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[company_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[cost_center]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="cost_center"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[cost_center]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[cost_center]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[cost_center_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="cost_center_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[cost_center_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[cost_center_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[position_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="position_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[position_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[position_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[position_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="position_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[position_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[position_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[org_unit_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="org_unit_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[org_unit_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[org_unit_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[org_unit_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="org_unit_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[org_unit_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[org_unit_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[section_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="section_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[section_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[section_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[section_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="section_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[section_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[section_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[dept_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="dept_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[dept_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[dept_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[dept_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="dept_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[dept_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[dept_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[group_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="group_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[group_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[group_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="group_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[group_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[div_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="div_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[div_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[div_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[div_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="div_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[div_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[div_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[sub_directorate_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="sub_directorate_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[sub_directorate_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[sub_directorate_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[sub_directorate_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="sub_directorate_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[sub_directorate_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[sub_directorate_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[directorate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="directorate"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[directorate]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[directorate]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[directorate_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="directorate_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[directorate_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[directorate_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[group_grade_code]"
+                      cachedDataType="bytes"
+                      cachedLength="8000"
+                      cachedName="group_grade_code"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[group_grade_code]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_grade_code]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[emp_area]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="emp_area"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_area]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_area]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[emp_area_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="emp_area_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_area_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_area_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[emp_office]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="emp_office"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_office]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_office]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[emp_office_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="emp_office_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_office_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_office_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[emp_status_code]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="emp_status_code"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_status_code]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_status_code]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[emp_status_desc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="emp_status_desc"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_status_desc]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_status_desc]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[ds1_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="ds1_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds1_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds1_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[ds1_position]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="ds1_position"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds1_position]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds1_position]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[ds2_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="ds2_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds2_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds2_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[ds2_position]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="ds2_position"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds2_position]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds2_position]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[ds3_id]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="ds3_id"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds3_id]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds3_id]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[ds3_position]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="ds3_position"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds3_position]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds3_position]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[joint_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="joint_date"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[joint_date]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[joint_date]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[birth_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="birth_date"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[birth_date]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[birth_date]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[email_address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="email_address"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[email_address]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[email_address]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[no_tlp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="no_tlp"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[no_tlp]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[no_tlp]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[no_ktp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="no_ktp"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[no_ktp]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[no_ktp]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].Columns[termintate_date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="termintate_date"
+                      externalMetadataColumnId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[termintate_date]"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[termintate_date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[landscape]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="landscape" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="emp_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[fullname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fullname" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[company_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="company_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[cost_center]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="cost_center" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[cost_center_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="cost_center_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[position_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="position_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[position_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="position_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[org_unit_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="org_unit_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[org_unit_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="org_unit_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[section_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="section_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[section_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="section_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[dept_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="dept_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[dept_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="dept_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[group_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="group_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[group_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="group_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[div_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="div_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[div_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="div_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[sub_directorate_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="sub_directorate_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[sub_directorate_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="sub_directorate_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[directorate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="directorate" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[directorate_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="directorate_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[group_grade_code]"
+                      dataType="bytes"
+                      length="8000"
+                      name="group_grade_code" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_area]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="emp_area" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_area_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="emp_area_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="emp_office" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_office_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="emp_office_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_status_code]"
+                      dataType="wstr"
+                      length="10"
+                      name="emp_status_code" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[emp_status_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="emp_status_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds1_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds1_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds1_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds1_position" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds2_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds2_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds2_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds2_position" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds3_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds3_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[ds3_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds3_position" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[joint_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="joint_date" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[birth_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="birth_date" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[email_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email_address" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[no_tlp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="no_tlp" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[no_ktp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="no_ktp" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input].ExternalColumns[termintate_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="termintate_date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Download Minova - employee\Source employee"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Source employee"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        
+landscape, emp_id, fullname, company_id, company_desc, cost_center, cost_center_desc, position_id, position_desc, org_unit_id, org_unit_desc, section_id, section_desc, dept_id, dept_desc, group_id, 
+group_desc, div_id, div_desc, sub_directorate_id, sub_directorate_desc, directorate, directorate_desc, group_grade_code, emp_area, emp_area_desc, emp_office, emp_office_desc, emp_status_code, 
+emp_status_desc, ds1_id, ds1_position, ds2_id, ds2_position, ds3_id, ds3_position, joint_date, birth_date, email_address, no_tlp, no_ktp, gender, termintate_date
+FROM            employee</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Download Minova - employee\Source employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Source_STAGING_HC]"
+                  connectionManagerRefId="Package.ConnectionManagers[Source_STAGING_HC]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[landscape]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[landscape]"
+                      length="3"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[landscape]"
+                      name="landscape"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_id]"
+                      name="emp_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[fullname]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[fullname]"
+                      length="50"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[fullname]"
+                      name="fullname"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      length="4"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[company_id]"
+                      name="company_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[company_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[company_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[company_desc]"
+                      name="company_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[cost_center]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[cost_center]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[cost_center]"
+                      name="cost_center"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[cost_center_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[cost_center_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[cost_center_desc]"
+                      name="cost_center_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[position_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[position_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[position_id]"
+                      name="position_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[position_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[position_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[position_desc]"
+                      name="position_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[org_unit_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[org_unit_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[org_unit_id]"
+                      name="org_unit_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[org_unit_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[org_unit_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[org_unit_desc]"
+                      name="org_unit_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[section_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[section_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[section_id]"
+                      name="section_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[section_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[section_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[section_desc]"
+                      name="section_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[dept_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[dept_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[dept_id]"
+                      name="dept_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[dept_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[dept_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[dept_desc]"
+                      name="dept_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[group_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_id]"
+                      name="group_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[group_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_desc]"
+                      name="group_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[div_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[div_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[div_id]"
+                      name="div_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[div_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[div_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[div_desc]"
+                      name="div_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[sub_directorate_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[sub_directorate_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[sub_directorate_id]"
+                      name="sub_directorate_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[sub_directorate_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[sub_directorate_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[sub_directorate_desc]"
+                      name="sub_directorate_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[directorate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[directorate]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[directorate]"
+                      name="directorate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[directorate_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[directorate_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[directorate_desc]"
+                      name="directorate_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_grade_code]"
+                      dataType="bytes"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[group_grade_code]"
+                      length="8000"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[group_grade_code]"
+                      name="group_grade_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_area]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_area]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_area]"
+                      name="emp_area"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_area_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_area_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_area_desc]"
+                      name="emp_area_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_office]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_office]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_office]"
+                      name="emp_office"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_office_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_office_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_office_desc]"
+                      name="emp_office_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_status_code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_status_code]"
+                      length="10"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_status_code]"
+                      name="emp_status_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_status_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_status_desc]"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[emp_status_desc]"
+                      name="emp_status_desc"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds1_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds1_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds1_id]"
+                      name="ds1_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds1_position]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds1_position]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds1_position]"
+                      name="ds1_position"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds2_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds2_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds2_id]"
+                      name="ds2_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds2_position]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds2_position]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds2_position]"
+                      name="ds2_position"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds3_id]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds3_id]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds3_id]"
+                      name="ds3_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds3_position]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds3_position]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[ds3_position]"
+                      name="ds3_position"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[joint_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[joint_date]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[joint_date]"
+                      name="joint_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[birth_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[birth_date]"
+                      name="birth_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[email_address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[email_address]"
+                      length="50"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[email_address]"
+                      name="email_address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[no_tlp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[no_tlp]"
+                      length="20"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[no_tlp]"
+                      name="no_tlp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[no_ktp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[no_ktp]"
+                      length="20"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[no_ktp]"
+                      name="no_ktp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      length="10"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[termintate_date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[termintate_date]"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].Columns[termintate_date]"
+                      name="termintate_date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[landscape]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="landscape" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="emp_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[fullname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fullname" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="company_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[company_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="company_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[cost_center]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="cost_center" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[cost_center_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="cost_center_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[position_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="position_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[position_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="position_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[org_unit_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="org_unit_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[org_unit_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="org_unit_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[section_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="section_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[section_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="section_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[dept_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="dept_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[dept_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="dept_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[group_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="group_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[group_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="group_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[div_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="div_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[div_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="div_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[sub_directorate_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="sub_directorate_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[sub_directorate_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="sub_directorate_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[directorate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="directorate" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[directorate_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="directorate_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[group_grade_code]"
+                      dataType="bytes"
+                      length="8000"
+                      name="group_grade_code" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_area]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="emp_area" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_area_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="emp_area_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="emp_office" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_office_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="emp_office_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_status_code]"
+                      dataType="wstr"
+                      length="10"
+                      name="emp_status_code" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[emp_status_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="emp_status_desc" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds1_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds1_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds1_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds1_position" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds2_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds2_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds2_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds2_position" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds3_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds3_id" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[ds3_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ds3_position" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[joint_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="joint_date" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[birth_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="birth_date" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[email_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="email_address" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[no_tlp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="no_tlp" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[no_ktp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="no_ktp" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output].ExternalColumns[termintate_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="termintate_date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[landscape]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[landscape]"
+                      name="landscape" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_id]"
+                      name="emp_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[fullname]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[fullname]"
+                      name="fullname" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[company_id]"
+                      name="company_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[company_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[company_desc]"
+                      name="company_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[cost_center]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[cost_center]"
+                      name="cost_center" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[cost_center_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[cost_center_desc]"
+                      name="cost_center_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[position_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[position_id]"
+                      name="position_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[position_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[position_desc]"
+                      name="position_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[org_unit_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[org_unit_id]"
+                      name="org_unit_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[org_unit_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[org_unit_desc]"
+                      name="org_unit_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[section_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[section_id]"
+                      name="section_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[section_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[section_desc]"
+                      name="section_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[dept_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[dept_id]"
+                      name="dept_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[dept_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[dept_desc]"
+                      name="dept_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[group_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[group_id]"
+                      name="group_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[group_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[group_desc]"
+                      name="group_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[div_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[div_id]"
+                      name="div_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[div_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[div_desc]"
+                      name="div_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[sub_directorate_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[sub_directorate_id]"
+                      name="sub_directorate_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[sub_directorate_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[sub_directorate_desc]"
+                      name="sub_directorate_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[directorate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[directorate]"
+                      name="directorate" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[directorate_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[directorate_desc]"
+                      name="directorate_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[group_grade_code]"
+                      dataType="bytes"
+                      length="8000"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[group_grade_code]"
+                      name="group_grade_code" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_area]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_area]"
+                      name="emp_area" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_area_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_area_desc]"
+                      name="emp_area_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_office]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_office]"
+                      name="emp_office" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_office_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_office_desc]"
+                      name="emp_office_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_status_code]"
+                      dataType="wstr"
+                      length="10"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_status_code]"
+                      name="emp_status_code" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_status_desc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[emp_status_desc]"
+                      name="emp_status_desc" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds1_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds1_id]"
+                      name="ds1_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds1_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds1_position]"
+                      name="ds1_position" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds2_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds2_id]"
+                      name="ds2_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds2_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds2_position]"
+                      name="ds2_position" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds3_id]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds3_id]"
+                      name="ds3_id" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds3_position]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ds3_position]"
+                      name="ds3_position" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[joint_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[joint_date]"
+                      name="joint_date" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[birth_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[birth_date]"
+                      name="birth_date" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[email_address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[email_address]"
+                      name="email_address" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[no_tlp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[no_tlp]"
+                      name="no_tlp" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[no_ktp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[no_ktp]"
+                      name="no_ktp" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[termintate_date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[termintate_date]"
+                      name="termintate_date" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Download Minova - employee.Paths[OLE DB Source Output]"
+              endId="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Download Minova - employee\Source employee.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\EXEC Usp_UpdateDataStaging"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3F8D035C-3A9B-4BD4-8BE6-7AEFEEFA3B31}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="EXEC Usp_UpdateDataStaging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA313008-A76C-4C50-B773-D70D0B572BB4}"
+          SQLTask:SqlStatementSource="EXEC Usp_UpdateDataStaging" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate STG_MINOVA_Karyawan"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{C33DC513-BD16-4757-8C40-AF27E4CF9310}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate STG_MINOVA_Karyawan"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{CA313008-A76C-4C50-B773-D70D0B572BB4}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE STG_MINOVA_Karyawan" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3B9FBEAF-967E-46F9-B4C9-4A21587BCF9B}"
+      DTS:From="Package\Truncate STG_MINOVA_Karyawan"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Download Minova - employee" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{82FAB6EB-8D6F-4C07-9CAA-BCD44759BF35}"
+      DTS:From="Package\Download Minova - employee"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\EXEC Usp_UpdateDataStaging" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Download Minova - employee"
+          TopLeft="312.083328682929,107.466664745013" />
+        <NodeLayout
+          Size="220.666666666667,42"
+          Id="Package\EXEC Usp_UpdateDataStaging"
+          TopLeft="309.166662059724,191.966663234035" />
+        <NodeLayout
+          Size="240.666666666667,42"
+          Id="Package\Truncate STG_MINOVA_Karyawan"
+          TopLeft="300.833328850567,20.799999628067" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="421.124995433415,62.799999628067">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.6666651169459"
+              Start="0,0"
+              End="0,37.1666651169459">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.1666651169459" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="420.291662037994,149.466664745013">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.4999984890223"
+              Start="0,0"
+              End="0,34.9999984890223">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.9999984890223" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[Destination_CAS]">
+    <DataSourceID>Destination_CAS</DataSourceID>
+  </ConnectionManager>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[ETLConfiguration]">
+    <DataSourceID>ETLConfiguration</DataSourceID>
+  </ConnectionManager>
+  <ConnectionManager
+    design-time-name="Package.ConnectionManagers[Source_STAGING_HC]">
+    <DataSourceID>Source_STAGING_HC</DataSourceID>
+  </ConnectionManager>
+  <TaskHost
+    design-time-name="Package\Download Minova - employee">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="159.333333333334,42"
+          Id="Package\Download Minova - employee\Source employee"
+          TopLeft="279.583329167217,27.7333328374227" />
+        <NodeLayout
+          Size="251.333333333334,42"
+          Id="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan"
+          TopLeft="235.833329819143,120.466664512555" />
+        <EdgeLayout
+          Id="Package\Download Minova - employee.Paths[OLE DB Source Output]"
+          TopLeft="360.374996159847,69.7333328374227">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.7333316751321"
+              Start="0,0"
+              End="0,43.2333316751321">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2333316751321" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Download Minova - employee\Destination STG_MINOVA_Karyawan">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Download Minova - employee\Source employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,212 @@
+D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.exe
+D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+D:\NawaData\Service\NawaService\NawaService\bin\Debug\NawaDataService.xml
+D:\NawaData\Service\NawaService\NawaService\bin\Debug\EntityFramework.dll
+D:\NawaData\Service\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSRuntimeWrap.dll
+D:\NawaData\Service\NawaService\NawaService\bin\Debug\EntityFramework.xml
+D:\NawaData\Service\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+D:\NawaData\Service\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+D:\NawaData\Service\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+D:\NawaData\Service\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+D:\NawaData\Service\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+D:\NawaData\Service\NawaService\NawaService\obj\Debug\NawaDataService.exe
+D:\NawaData\Service\NawaService\NawaService\obj\Debug\NawaDataService.xml
+D:\NawaData\Service\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+E:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.xml
+E:\LLC\email\NawaService\NawaService\bin\Debug\CookComputing.XmlRpcV2.dll
+E:\LLC\email\NawaService\NawaService\bin\Debug\EntityFramework.dll
+E:\LLC\email\NawaService\NawaService\bin\Debug\EntityFramework.xml
+E:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+E:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+E:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+E:\LLC\email\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+E:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.exe
+E:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.xml
+E:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+E:\LLC\email\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+D:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.exe
+D:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.xml
+D:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.exe
+D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+D:\LLC\email\NawaService\NawaService\bin\Debug\NawaDataService.xml
+D:\LLC\email\NawaService\NawaService\bin\Debug\CookComputing.XmlRpcV2.dll
+D:\LLC\email\NawaService\NawaService\bin\Debug\EntityFramework.dll
+D:\LLC\email\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.ManagedDTS.dll
+D:\LLC\email\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+D:\LLC\email\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+D:\LLC\email\NawaService\NawaService\bin\Debug\EntityFramework.xml
+D:\LLC\email\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+D:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+D:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+D:\LLC\email\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+D:\LLC\email\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+F:\Indra\SLIK\MNC\NawaService\NawaService\obj\Debug\NawaDataService.exe
+F:\Indra\SLIK\MNC\NawaService\NawaService\obj\Debug\NawaDataService.xml
+F:\Indra\SLIK\MNC\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.exe
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\NawaDataService.xml
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\EntityFramework.dll
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.ManagedDTS.dll
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+F:\Indra\SLIK\MNC\NawaService\NawaService\bin\Debug\EntityFramework.xml
+F:\Indra\SLIK\MNC\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+F:\Indra\SLIK\MNC\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+F:\Indra\SLIK\MNC\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+F:\Indra\SLIK\MNC\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+F:\Indra\SLIK\MNC\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.exe
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.xml
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.exe
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.xml
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\EntityFramework.dll
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.ManagedDTS.dll
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\EntityFramework.xml
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\log4net.dll
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\WinSCPnet.dll
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\EntityFramework.SqlServer.dll
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\EntityFramework.SqlServer.xml
+F:\Indra\Cash Advance\Source Code\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.DTSRuntimeWrap.dll
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.xml
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\log4net.dll
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.DTSRuntimeWrap.dll
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.ManagedDTS.dll
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.exe
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.xml
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.exe
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.xml
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.xml
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\log4net.dll
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.DTSRuntimeWrap.dll
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.ManagedDTS.dll
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Ko Bombom\NawaService\NawaService\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.exe
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\NawaDataService.xml
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\log4net.dll
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.DTSRuntimeWrap.dll
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.ManagedDTS.dll
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.PipelineHost.dll
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.exe
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.xml
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+F:\Indra\Danamon - Kopkar\Source Code\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+D:\Project\NDS SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+D:\Project\NDS SAFV\NawaService\NawaService\obj\Debug\NawaDataService.exe
+D:\Project\NDS SAFV\NawaService\NawaService\obj\Debug\NawaDataService.xml
+D:\Project\NDS SAFV\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+D:\Project\NDS SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe
+D:\Project\NDS SAFV\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+D:\Project\NDS SAFV\NawaService\NawaService\bin\Debug\NawaDataService.xml
+D:\Project\NDS SAFV\NawaService\NawaService\bin\Debug\log4net.dll
+D:\Project\NDS SAFV\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+D:\Project\NDS SAFV\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache
+D:\Project\NDS SAFV\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+D:\Project\NDS SAFV\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+D:\Project\NDS SAFV\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+D:\Project\NDS SAFV\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+D:\Project\NDS SAFV\NawaService\NawaService\bin\Debug\NawaDAL.dll
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.exe
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.xml
+F:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.exe
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\bin\Debug\NawaDataService.xml
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\bin\Debug\log4net.dll
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaService.vbprojAssemblyReference.cache
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.cache
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaService.vbproj.CoreCompileInputs.cache
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaService.vbproj.CopyComplete
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.exe
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.xml
+D:\Indra\Danamon - Kopkar\Dokumen\SourceCode\Sholihin\20180611\NawaService\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.exe.config
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.exe
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.pdb
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\NawaDataService.xml
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\log4net.dll
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaDataService.Resources.resources
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.cache
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaDataService.exe
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaDataService.xml
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaDataService.pdb
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\Microsoft.SqlServer.ManagedDTS.dll
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\bin\Debug\Microsoft.SQLServer.PipelineHost.dll
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaService.vbproj.CoreCompileInputs.cache
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaService.vbproj.CopyComplete
+D:\Nawadata\Kopkar\NawaService With Encrypt\NawaService\obj\Debug\NawaService.vbprojAssemblyReference.cache
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe.config
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.exe
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.pdb
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaDataService.xml
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\log4net.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.DTSPipelineWrap.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.ManagedDTS.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\Microsoft.SQLServer.PipelineHost.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Debug\NawaBLL.dll
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Debug\NawaDataService.Resources.resources
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Debug\NawaDataService.NawaDataConsole.resources
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Debug\NawaDataService.ProjectInstaller.resources
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Debug\NawaService.vbproj.GenerateResource.Cache
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Debug\NawaDataService.exe
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Debug\NawaDataService.xml
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Debug\NawaDataService.pdb
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Debug\NawaService.vbprojResolveAssemblyReference.cache

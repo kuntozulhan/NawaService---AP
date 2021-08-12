@@ -1,0 +1,545 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/28/2016 9:27:34 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="DESKTOP-D30QVRH"
+  DTS:CreatorName="DESKTOP-D30QVRH\Nawadata"
+  DTS:DTSID="{46E35F7A-AA1C-4C56-83B8-AB8256129C75}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Pkg_SLIKIntegration"
+  DTS:PackageType="5"
+  DTS:VersionBuild="176"
+  DTS:VersionGUID="{E0286F3C-6EE1-46B5-AA59-06D88F5D408A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ConfigDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E7CEF28B-5C46-430A-9577-7899E6E33090}"
+      DTS:ObjectName="ConfigDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.5.68.23;User ID=sa;Initial Catalog=SLIKMNCNDS;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8zHgwrqJj0GqgxIZt7sNZAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAD9WaG2JLtkXsvj53AYKt3ivzwT6h/kzOy3xMCiqxPyZwAAAAAOgAAAAAIAACAAAADt8A46+hUVpsQDdusOr5Zw5Rm6B9yLCjegESZVDB+vECAAAAAz3hOEaAGDpdsrtfYzZD9mXJaXtUuftZomvTWsvVSRJ0AAAACElBcl7fYWT6ZymRXoTSdt00evZ5xDFHzTwItkeCZs1PdxBrX84HmePRQX8i9XLQLrQ2PAPGWzhJrhunCOg8GQ</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DWH]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{076AA296-6B6C-4039-91EB-2D9B04C46E85}"
+      DTS:ObjectName="DWH">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.5.68.145;User ID=lsmk;Initial Catalog=LSMKMNC;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8zHgwrqJj0GqgxIZt7sNZAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAARWi9GRQuztsnF9lkI+qToDnMTSiLb9pH75GRfv5rd5AAAAAAOgAAAAAIAACAAAABcoiqoN1qBa67MKJnLmB522Dtj53Ze5PR4a/2Y5fyg6CAAAACT3QxEcqU+BZ/PiW9PkEP97SghMXMpK41qk/OQwHecSkAAAAAzDFVijt5QO+Fj3l9pJHojbMzpOXIF/QbS6UnpYVBrLabxw7a2XXM31IylvcaJeqBVTgyelb+xanzL4U8I7YvU</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SLIKDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5F5D82ED-24C2-437F-80FF-722235823613}"
+      DTS:ObjectName="SLIKDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=10.5.68.23;User ID=sa;Initial Catalog=SLIKMNCNDS;Provider=SQLNCLI11.1;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA8zHgwrqJj0GqgxIZt7sNZAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACiLRhScdWR36M+PX6OO4GaIbZBLHo9BES8hMkFoH625AAAAAAOgAAAAAIAACAAAADEo3QYAGl84wRG3G8s6041XIrD4e87ntO3MMs8qa92liAAAADzNlgiFAM+sbj+WTnWS0sMXHeF0ZzZDW82xdTHZTBhWEAAAADVWiWMppwys/pQuRD6NXKmrlP8S0DdnkLlU1hczUur9bmVM5b+pYHoJoEe7iIE/jqdaecAEoRz4BKg0qd/WG4h</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ConfigDB&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;PK_EODTaskDetailLog_ID&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{C295D928-489F-4B90-ADF9-098E92426540}"
+      DTS:ObjectName="PK_EODTaskDetailLog_ID" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ConfigDB&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;DataDate&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{6B2F3FB8-4966-4C36-A27C-F9836D8AFB1C}"
+      DTS:ObjectName="DataDate" />
+    <DTS:Configuration
+      DTS:ConfigurationString="SLIK"
+      DTS:ConfigurationType="2"
+      DTS:ConfigurationVariable="\Package.Connections[ConfigDB].Properties[ConnectionString]"
+      DTS:CreationName=""
+      DTS:DTSID="{1F9457EA-D917-4881-A58E-D8D536C48DDF}"
+      DTS:ObjectName="ConfigDB" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ConfigDB&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;SLIKDB&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{7803E43F-F273-44DB-8272-A64565ECEF81}"
+      DTS:ObjectName="SLIKDB" />
+    <DTS:Configuration
+      DTS:ConfigurationString="&quot;ConfigDB&quot;;&quot;[dbo].[NawaDataETLConfigurations]&quot;;&quot;Datawarehouse&quot;;"
+      DTS:ConfigurationType="7"
+      DTS:CreationName=""
+      DTS:DTSID="{EDF5685F-539C-414C-8CA0-355879588B53}"
+      DTS:ObjectName="Datawarehouse" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="SLIKDB"
+      DTS:CreationName="DTS.LogProviderSQLServer.3"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{EA64432E-06ED-4A63-86A3-3290915EE535}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B934F99-0980-4D50-BC89-ACDC36F41920}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Branch">
+      <DTS:VariableValue
+        DTS:DataType="8">ALL</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8A2D7425-356E-41D3-8B4E-76E77047E0C6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DataDate">
+      <DTS:VariableValue
+        DTS:DataType="8">20161231</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2FBC9105-D39A-4EDB-93C2-6D4E8D3C2542}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="SUBSTRING( @[User::DataDate] ,5, 2 )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Month">
+      <DTS:VariableValue
+        DTS:DataType="8">12</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8E598196-8112-4C36-9635-C3B373F4D330}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="PK_EODTaskDetailLog_ID">
+      <DTS:VariableValue
+        DTS:DataType="20">20150</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{82212A5F-DAF1-4A04-9EDB-BEBADAA4A7C9}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="SUBSTRING( @[User::DataDate] ,1, 4 )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Year">
+      <DTS:VariableValue
+        DTS:DataType="8">2016</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">3,7,OnError,13,OnInformation,12,OnTaskFailed</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{EA64432E-06ED-4A63-86A3-3290915EE535}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Audit Trail EOD"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{69884461-2A5E-482D-8B58-9A2586C4BD1A}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Audit Trail EOD"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5F5D82ED-24C2-437F-80FF-722235823613}"
+          SQLTask:SqlStatementSource="UPDATE EODTaskDetailLog  SET executionID = REPLACE( REPLACE( ?,'{',''),'}','')WHERE PK_EODTaskDetailLog_ID=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::ExecutionInstanceGUID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::PK_EODTaskDetailLog_ID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clean Immediate"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9B8284A3-0E18-4DC5-9777-56D1389CF188}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean Immediate"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5F5D82ED-24C2-437F-80FF-722235823613}"
+          SQLTask:SqlStatementSource="EXEC usp_CleanRecordsImmediate&#xA;&#x9;@bulan = ?,&#xA;&#x9;@tahun = ?&#xA;&#xA;GO&#xA;&#xA;exec usp_CheckDuplicate&#xA;&#xA;&#xA;GO" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Bulan"
+            SQLTask:DtsVariableName="User::Month"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@Tahun"
+            SQLTask:DtsVariableName="User::Year"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clean values"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{84F7EC94-519D-4E9D-996E-0E6C189C3475}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clean values"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5F5D82ED-24C2-437F-80FF-722235823613}"
+          SQLTask:SqlStatementSource="EXEC usp_CleanRecords&#xA;&#x9;@bulan = ?,&#xA;&#x9;@tahun = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@bulan"
+            SQLTask:DtsVariableName="User::Month"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@tahun"
+            SQLTask:DtsVariableName="User::Year"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="129"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Create Cleansing Report"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5246FBFE-9E31-411C-8EB8-D0F661F3BB06}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Create Cleansing Report"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5F5D82ED-24C2-437F-80FF-722235823613}"
+          SQLTask:SqlStatementSource="EXEC usp_InsertCleansingReport" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert Table CLN_"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{15805523-91BC-4937-B5B6-31DC63CBC886}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Table CLN_"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5F5D82ED-24C2-437F-80FF-722235823613}"
+          SQLTask:SqlStatementSource="EXEC usp_InsertCleansingReportBase" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{3A1BF73F-7184-48A3-A511-91C5AB9CEA77}"
+      DTS:From="Package\Audit Trail EOD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert Table CLN_" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{FB7309C7-64EF-40C0-8638-164C5B8BBFC3}"
+      DTS:From="Package\Audit Trail EOD"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Clean Immediate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{C2380F1C-B6BE-49D7-B808-8E2BE7C9D80D}"
+      DTS:From="Package\Insert Table CLN_"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\Clean values" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{6F8BB724-34A1-452E-A492-C182FE7BF31F}"
+      DTS:From="Package\Clean values"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Create Cleansing Report" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42"
+          Id="Package\Audit Trail EOD"
+          TopLeft="248.833333333333,5.5" />
+        <NodeLayout
+          Size="158.666666666667,42"
+          Id="Package\Clean Immediate"
+          TopLeft="244.833333333333,107.5" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Clean values"
+          TopLeft="33.1666666666667,209.5" />
+        <NodeLayout
+          Size="193.333333333334,42"
+          Id="Package\Create Cleansing Report"
+          TopLeft="5.50000000000007,311.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Insert Table CLN_"
+          TopLeft="20.1666666666667,107.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="300.388888888889,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-198.222222222222,60"
+              Start="0,0"
+              End="-198.222222222222,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3782837127846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3782837127846"
+                    Point2="0,24.3782837127846"
+                    Point3="-4,24.3782837127846" />
+                  <mssgle:LineSegment
+                    End="-194.222222222222,24.3782837127846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-194.222222222222,24.3782837127846"
+                    Point2="-198.222222222222,24.3782837127846"
+                    Point3="-198.222222222222,28.3782837127846" />
+                  <mssgle:LineSegment
+                    End="-198.222222222222,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="347.944444444444,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-23.7777777777778,60"
+              Start="0,0"
+              End="-23.7777777777778,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3782837127846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.3782837127846"
+                    Point2="0,24.3782837127846"
+                    Point3="-4,24.3782837127846" />
+                  <mssgle:LineSegment
+                    End="-19.7777777777778,24.3782837127846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-19.7777777777778,24.3782837127846"
+                    Point2="-23.7777777777778,24.3782837127846"
+                    Point3="-23.7777777777778,28.3782837127846" />
+                  <mssgle:LineSegment
+                    End="-23.7777777777778,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="102.166666666667,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="102.166666666667,251.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

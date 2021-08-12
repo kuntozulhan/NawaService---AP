@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NawaDataModelStoreContainer" CdmEntityContainer="NawaDataEntities">
+    <EntitySetMapping Name="EODSchedulers">
+      <EntityTypeMapping TypeName="NawaDataModel.EODScheduler">
+        <MappingFragment StoreEntitySet="EODScheduler">
+          <ScalarProperty Name="HasPeriodikScheduler" ColumnName="HasPeriodikScheduler" />
+          <ScalarProperty Name="PK_EODScheduler_ID" ColumnName="PK_EODScheduler_ID" />
+          <ScalarProperty Name="EODSchedulerName" ColumnName="EODSchedulerName" />
+          <ScalarProperty Name="EODSchedulerDescription" ColumnName="EODSchedulerDescription" />
+          <ScalarProperty Name="EODPeriod" ColumnName="EODPeriod" />
+          <ScalarProperty Name="FK_MsEODPeriod" ColumnName="FK_MsEODPeriod" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODSchedulerDetails">
+      <EntityTypeMapping TypeName="NawaDataModel.EODSchedulerDetail">
+        <MappingFragment StoreEntitySet="EODSchedulerDetail">
+          <ScalarProperty Name="PK_EODSchedulerDetail_ID" ColumnName="PK_EODSchedulerDetail_ID" />
+          <ScalarProperty Name="FK_EODSCheduler_ID" ColumnName="FK_EODSCheduler_ID" />
+          <ScalarProperty Name="FK_EODTask_ID" ColumnName="FK_EODTask_ID" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODSchedulerLogs">
+      <EntityTypeMapping TypeName="NawaDataModel.EODSchedulerLog">
+        <MappingFragment StoreEntitySet="EODSchedulerLog">
+          <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+          <ScalarProperty Name="PK_EODSchedulerLog_ID" ColumnName="PK_EODSchedulerLog_ID" />
+          <ScalarProperty Name="FK_EODSchedulerID" ColumnName="FK_EODSchedulerID" />
+          <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+          <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTasks">
+      <EntityTypeMapping TypeName="NawaDataModel.EODTask">
+        <MappingFragment StoreEntitySet="EODTask">
+          <ScalarProperty Name="PK_EODTask_ID" ColumnName="PK_EODTask_ID" />
+          <ScalarProperty Name="EODTaskName" ColumnName="EODTaskName" />
+          <ScalarProperty Name="EODTaskDescription" ColumnName="EODTaskDescription" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTaskDetails">
+      <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetail">
+        <MappingFragment StoreEntitySet="EODTaskDetail">
+          <ScalarProperty Name="PK_EODTaskDetail_ID" ColumnName="PK_EODTaskDetail_ID" />
+          <ScalarProperty Name="FK_EODTask_ID" ColumnName="FK_EODTask_ID" />
+          <ScalarProperty Name="FK_EODTaskDetailType_ID" ColumnName="FK_EODTaskDetailType_ID" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="SSISName" ColumnName="SSISName" />
+          <ScalarProperty Name="SSISFIle" ColumnName="SSISFIle" />
+          <ScalarProperty Name="StoreProcedureName" ColumnName="StoreProcedureName" />
+          <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+          <ScalarProperty Name="IsUseParameterProcessDate" ColumnName="IsUseParameterProcessDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTaskDetailLogs">
+      <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetailLog">
+        <MappingFragment StoreEntitySet="EODTaskDetailLog">
+          <ScalarProperty Name="executionID" ColumnName="executionID" />
+          <ScalarProperty Name="PK_EODTaskDetailLog_ID" ColumnName="PK_EODTaskDetailLog_ID" />
+          <ScalarProperty Name="EODSchedulerLogID" ColumnName="EODSchedulerLogID" />
+          <ScalarProperty Name="EODTaskLogID" ColumnName="EODTaskLogID" />
+          <ScalarProperty Name="FK_EODTAskDetail_ID" ColumnName="FK_EODTAskDetail_ID" />
+          <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTaskDetailTypes">
+      <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetailType">
+        <MappingFragment StoreEntitySet="EODTaskDetailType">
+          <ScalarProperty Name="PK_EODTaskDetailType_ID" ColumnName="PK_EODTaskDetailType_ID" />
+          <ScalarProperty Name="EODTaskDetailType1" ColumnName="EODTaskDetailType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EODTaskLogs">
+      <EntityTypeMapping TypeName="NawaDataModel.EODTaskLog">
+        <MappingFragment StoreEntitySet="EODTaskLog">
+          <ScalarProperty Name="PK_EODTaskLog_ID" ColumnName="PK_EODTaskLog_ID" />
+          <ScalarProperty Name="EODSchedulerLogID" ColumnName="EODSchedulerLogID" />
+          <ScalarProperty Name="FK_EODTaskID" ColumnName="FK_EODTaskID" />
+          <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemParameters">
+      <EntityTypeMapping TypeName="NawaDataModel.SystemParameter">
+        <MappingFragment StoreEntitySet="SystemParameter">
+          <ScalarProperty Name="EncriptionKey" ColumnName="EncriptionKey" />
+          <ScalarProperty Name="IsEncript" ColumnName="IsEncript" />
+          <ScalarProperty Name="fk_MFieldType_ID" ColumnName="fk_MFieldType_ID" />
+          <ScalarProperty Name="Hide" ColumnName="Hide" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+          <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+          <ScalarProperty Name="FK_SystemParameterGroup_ID" ColumnName="FK_SystemParameterGroup_ID" />
+          <ScalarProperty Name="PK_SystemParameter_ID" ColumnName="PK_SystemParameter_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogConsoleServices">
+      <EntityTypeMapping TypeName="NawaDataModel.LogConsoleService">
+        <MappingFragment StoreEntitySet="LogConsoleService">
+          <ScalarProperty Name="LogDescription" ColumnName="LogDescription" />
+          <ScalarProperty Name="LogInfo" ColumnName="LogInfo" />
+          <ScalarProperty Name="LogStatus" ColumnName="LogStatus" />
+          <ScalarProperty Name="LogCreatedDate" ColumnName="LogCreatedDate" />
+          <ScalarProperty Name="Pk_LogConsoleService_Id" ColumnName="Pk_LogConsoleService_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrxDafnom_Print">
+      <EntityTypeMapping TypeName="NawaDataModel.TrxDafnom_Print">
+        <MappingFragment StoreEntitySet="TrxDafnom_Print">
+          <ScalarProperty Name="AttachmentFileContent" ColumnName="AttachmentFileContent" />
+          <ScalarProperty Name="AttachmentFileName" ColumnName="AttachmentFileName" />
+          <ScalarProperty Name="Fk_TrxDafnom_Id" ColumnName="Fk_TrxDafnom_Id" />
+          <ScalarProperty Name="Pk_TrxDafnom_Print_Id" ColumnName="Pk_TrxDafnom_Print_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrxDafnom_OTP">
+      <EntityTypeMapping TypeName="NawaDataModel.TrxDafnom_OTP">
+        <MappingFragment StoreEntitySet="TrxDafnom_OTP">
+          <ScalarProperty Name="MsScheduleCode" ColumnName="MsScheduleCode" />
+          <ScalarProperty Name="NomorRekeningCASA" ColumnName="NomorRekeningCASA" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="LTSApprovalReason" ColumnName="LTSApprovalReason" />
+          <ScalarProperty Name="ApprovalReason" ColumnName="ApprovalReason" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Fk_MsStatusDokumen_Id" ColumnName="Fk_MsStatusDokumen_Id" />
+          <ScalarProperty Name="Fk_MsStatusOTP_Id" ColumnName="Fk_MsStatusOTP_Id" />
+          <ScalarProperty Name="BiayaRTGS" ColumnName="BiayaRTGS" />
+          <ScalarProperty Name="Fk_MsJenisPencairan_Id" ColumnName="Fk_MsJenisPencairan_Id" />
+          <ScalarProperty Name="TanggalDebetAngsuran" ColumnName="TanggalDebetAngsuran" />
+          <ScalarProperty Name="Fk_MsKondisiMargin_Id" ColumnName="Fk_MsKondisiMargin_Id" />
+          <ScalarProperty Name="NisbahBagiHasilNasabah" ColumnName="NisbahBagiHasilNasabah" />
+          <ScalarProperty Name="NisbahBagiHasilBank" ColumnName="NisbahBagiHasilBank" />
+          <ScalarProperty Name="MarginEquivalent" ColumnName="MarginEquivalent" />
+          <ScalarProperty Name="Nominal" ColumnName="Nominal" />
+          <ScalarProperty Name="PeriodEnd" ColumnName="PeriodEnd" />
+          <ScalarProperty Name="PeriodStart" ColumnName="PeriodStart" />
+          <ScalarProperty Name="TanggalPencairan" ColumnName="TanggalPencairan" />
+          <ScalarProperty Name="NoPromes" ColumnName="NoPromes" />
+          <ScalarProperty Name="Fk_MsJenisOTP_Id" ColumnName="Fk_MsJenisOTP_Id" />
+          <ScalarProperty Name="MsProductCode" ColumnName="MsProductCode" />
+          <ScalarProperty Name="MsMISCode" ColumnName="MsMISCode" />
+          <ScalarProperty Name="MsAccountOfficerCode" ColumnName="MsAccountOfficerCode" />
+          <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+          <ScalarProperty Name="Fk_TrxDafnom_Id" ColumnName="Fk_TrxDafnom_Id" />
+          <ScalarProperty Name="Pk_TrxDafnom_OTP_Id" ColumnName="Pk_TrxDafnom_OTP_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrxDafnoms">
+      <EntityTypeMapping TypeName="NawaDataModel.TrxDafnom">
+        <MappingFragment StoreEntitySet="TrxDafnom">
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="ApprovalReason" ColumnName="ApprovalReason" />
+          <ScalarProperty Name="Fk_MsStatusDokumen_Id" ColumnName="Fk_MsStatusDokumen_Id" />
+          <ScalarProperty Name="Fk_MsStatusDafnom_Id" ColumnName="Fk_MsStatusDafnom_Id" />
+          <ScalarProperty Name="TotalPengajuan" ColumnName="TotalPengajuan" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="Fk_TrxLimit_Id" ColumnName="Fk_TrxLimit_Id" />
+          <ScalarProperty Name="Fk_MsKoperasi_Id" ColumnName="Fk_MsKoperasi_Id" />
+          <ScalarProperty Name="Pk_TrxDafnom_Id" ColumnName="Pk_TrxDafnom_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrxOTP_NCBSFile">
+      <EntityTypeMapping TypeName="NawaDataModel.TrxOTP_NCBSFile">
+        <MappingFragment StoreEntitySet="TrxOTP_NCBSFile">
+          <ScalarProperty Name="ResponseFileContent" ColumnName="ResponseFileContent" />
+          <ScalarProperty Name="ResponseFileName" ColumnName="ResponseFileName" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="ResponseDate" ColumnName="ResponseDate" />
+          <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+          <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+          <ScalarProperty Name="Fk_MsNCBSFileType_Id" ColumnName="Fk_MsNCBSFileType_Id" />
+          <ScalarProperty Name="Fk_MsStatusPengiriman_Id" ColumnName="Fk_MsStatusPengiriman_Id" />
+          <ScalarProperty Name="NCBSFileContent" ColumnName="NCBSFileContent" />
+          <ScalarProperty Name="NCBSFileName" ColumnName="NCBSFileName" />
+          <ScalarProperty Name="Fk_TrxDafnom_OTP_Id" ColumnName="Fk_TrxDafnom_OTP_Id" />
+          <ScalarProperty Name="Pk_TrxOTP_NCBSFile_Id" ColumnName="Pk_TrxOTP_NCBSFile_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrxOTP_Angsuran">
+      <EntityTypeMapping TypeName="NawaDataModel.TrxOTP_Angsuran">
+        <MappingFragment StoreEntitySet="TrxOTP_Angsuran">
+          <ScalarProperty Name="TotalAngsuran" ColumnName="TotalAngsuran" />
+          <ScalarProperty Name="AngsuranMargin" ColumnName="AngsuranMargin" />
+          <ScalarProperty Name="AngsuranPokok" ColumnName="AngsuranPokok" />
+          <ScalarProperty Name="SisaPokok" ColumnName="SisaPokok" />
+          <ScalarProperty Name="TanggalAngsuran" ColumnName="TanggalAngsuran" />
+          <ScalarProperty Name="AngsuranKe" ColumnName="AngsuranKe" />
+          <ScalarProperty Name="Fk_TrxDafnom_Detail_Id" ColumnName="Fk_TrxDafnom_Detail_Id" />
+          <ScalarProperty Name="Fk_TrxDafnom_OTP_Id" ColumnName="Fk_TrxDafnom_OTP_Id" />
+          <ScalarProperty Name="Pk_TrxOTP_Angsuran_Id" ColumnName="Pk_TrxOTP_Angsuran_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrxDafnom_Detail">
+      <EntityTypeMapping TypeName="NawaDataModel.TrxDafnom_Detail">
+        <MappingFragment StoreEntitySet="TrxDafnom_Detail">
+          <ScalarProperty Name="RekeningNomor" ColumnName="RekeningNomor" />
+          <ScalarProperty Name="RekeningNamaBank" ColumnName="RekeningNamaBank" />
+          <ScalarProperty Name="RekeningAtasNama" ColumnName="RekeningAtasNama" />
+          <ScalarProperty Name="IIR" ColumnName="IIR" />
+          <ScalarProperty Name="SisaJangkaWaktu" ColumnName="SisaJangkaWaktu" />
+          <ScalarProperty Name="Fk_MsSumberDana_Id" ColumnName="Fk_MsSumberDana_Id" />
+          <ScalarProperty Name="OutstandingTerakhir" ColumnName="OutstandingTerakhir" />
+          <ScalarProperty Name="AngsuranKoperasiYgDimiliki" ColumnName="AngsuranKoperasiYgDimiliki" />
+          <ScalarProperty Name="TakeHomePay" ColumnName="TakeHomePay" />
+          <ScalarProperty Name="Angsuran" ColumnName="Angsuran" />
+          <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+          <ScalarProperty Name="Plafond" ColumnName="Plafond" />
+          <ScalarProperty Name="Fk_MsTujuanPembiayaan_Id" ColumnName="Fk_MsTujuanPembiayaan_Id" />
+          <ScalarProperty Name="MasaKerja" ColumnName="MasaKerja" />
+          <ScalarProperty Name="TanggalPengangkatan" ColumnName="TanggalPengangkatan" />
+          <ScalarProperty Name="NoTelepon" ColumnName="NoTelepon" />
+          <ScalarProperty Name="TanggalLahir" ColumnName="TanggalLahir" />
+          <ScalarProperty Name="NIK" ColumnName="NIK" />
+          <ScalarProperty Name="NoKTP" ColumnName="NoKTP" />
+          <ScalarProperty Name="NamaKaryawan" ColumnName="NamaKaryawan" />
+          <ScalarProperty Name="Fk_TrxDafnom_OTP_Id" ColumnName="Fk_TrxDafnom_OTP_Id" />
+          <ScalarProperty Name="Fk_TrxDafnom_Id" ColumnName="Fk_TrxDafnom_Id" />
+          <ScalarProperty Name="Pk_TrxDafnom_Detail_Id" ColumnName="Pk_TrxDafnom_Detail_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vw_MigrasiAngsuran">
+      <EntityTypeMapping TypeName="NawaDataModel.Vw_MigrasiAngsuran">
+        <MappingFragment StoreEntitySet="Vw_MigrasiAngsuran">
+          <ScalarProperty Name="Pk_TrxDafnom_OTP_Id" ColumnName="Pk_TrxDafnom_OTP_Id" />
+          <ScalarProperty Name="MarginEquivalent" ColumnName="MarginEquivalent" />
+          <ScalarProperty Name="NomorRekeningCASA" ColumnName="NomorRekeningCASA" />
+          <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+          <ScalarProperty Name="LTSApprovalReason" ColumnName="LTSApprovalReason" />
+          <ScalarProperty Name="ApprovalReason" ColumnName="ApprovalReason" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Fk_MsStatusDokumen_Id" ColumnName="Fk_MsStatusDokumen_Id" />
+          <ScalarProperty Name="Fk_MsStatusOTP_Id" ColumnName="Fk_MsStatusOTP_Id" />
+          <ScalarProperty Name="Fk_MsJenisPencairan_Id" ColumnName="Fk_MsJenisPencairan_Id" />
+          <ScalarProperty Name="TanggalDebetAngsuran" ColumnName="TanggalDebetAngsuran" />
+          <ScalarProperty Name="Fk_MsKondisiMargin_Id" ColumnName="Fk_MsKondisiMargin_Id" />
+          <ScalarProperty Name="NisbahBagiHasilNasabah" ColumnName="NisbahBagiHasilNasabah" />
+          <ScalarProperty Name="NisbahBagiHasilBank" ColumnName="NisbahBagiHasilBank" />
+          <ScalarProperty Name="Nominal" ColumnName="Nominal" />
+          <ScalarProperty Name="TanggalPencairan" ColumnName="TanggalPencairan" />
+          <ScalarProperty Name="Fk_MsJenisOTP_Id" ColumnName="Fk_MsJenisOTP_Id" />
+          <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+          <ScalarProperty Name="Fk_TrxDafnom_Id" ColumnName="Fk_TrxDafnom_Id" />
+          <ScalarProperty Name="Batch" ColumnName="Batch" />
+          <ScalarProperty Name="LimitCode" ColumnName="LimitCode" />
+          <ScalarProperty Name="CIFNo" ColumnName="CIFNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NawaDataETLConfigurations">
+      <EntityTypeMapping TypeName="NawaDataModel.NawaDataETLConfiguration">
+        <MappingFragment StoreEntitySet="NawaDataETLConfigurations">
+          <ScalarProperty Name="ConfiguredValueType" ColumnName="ConfiguredValueType" />
+          <ScalarProperty Name="PackagePath" ColumnName="PackagePath" />
+          <ScalarProperty Name="ConfiguredValue" ColumnName="ConfiguredValue" />
+          <ScalarProperty Name="ConfigurationFilter" ColumnName="ConfigurationFilter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrxOTP_Pelunasan">
+      <EntityTypeMapping TypeName="NawaDataModel.TrxOTP_Pelunasan">
+        <MappingFragment StoreEntitySet="TrxOTP_Pelunasan">
+          <ScalarProperty Name="No_Urut" ColumnName="No_Urut" />
+          <ScalarProperty Name="TunggakanDenda" ColumnName="TunggakanDenda" />
+          <ScalarProperty Name="TunggakanMargin" ColumnName="TunggakanMargin" />
+          <ScalarProperty Name="TotalMarginBerjalan" ColumnName="TotalMarginBerjalan" />
+          <ScalarProperty Name="TotalOutstanding" ColumnName="TotalOutstanding" />
+          <ScalarProperty Name="ApprovalReason" ColumnName="ApprovalReason" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Fk_MsStatusDokumen_Id" ColumnName="Fk_MsStatusDokumen_Id" />
+          <ScalarProperty Name="Fk_MsStatusPelunasan_Id" ColumnName="Fk_MsStatusPelunasan_Id" />
+          <ScalarProperty Name="Fk_MsJenisRecalculatePelunasan_Id" ColumnName="Fk_MsJenisRecalculatePelunasan_Id" />
+          <ScalarProperty Name="TotalPelunasan" ColumnName="TotalPelunasan" />
+          <ScalarProperty Name="Fk_MsJenisOTPPelunasan_Id" ColumnName="Fk_MsJenisOTPPelunasan_Id" />
+          <ScalarProperty Name="Fk_TrxDafnom_OTP_Id" ColumnName="Fk_TrxDafnom_OTP_Id" />
+          <ScalarProperty Name="Pk_TrxOTP_Pelunasan_Id" ColumnName="Pk_TrxOTP_Pelunasan_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TrxLimits">
+      <EntityTypeMapping TypeName="NawaDataModel.TrxLimit">
+        <MappingFragment StoreEntitySet="TrxLimit">
+          <ScalarProperty Name="ScheduleCode" ColumnName="ScheduleCode" />
+          <ScalarProperty Name="CappingIIRPercent" ColumnName="CappingIIRPercent" />
+          <ScalarProperty Name="CappingIIR" ColumnName="CappingIIR" />
+          <ScalarProperty Name="CappingPlafonPercent" ColumnName="CappingPlafonPercent" />
+          <ScalarProperty Name="CappingPlafon" ColumnName="CappingPlafon" />
+          <ScalarProperty Name="CappingDeviasi" ColumnName="CappingDeviasi" />
+          <ScalarProperty Name="SisaLimit" ColumnName="SisaLimit" />
+          <ScalarProperty Name="MsBranchCode" ColumnName="MsBranchCode" />
+          <ScalarProperty Name="ParentLimitCode" ColumnName="ParentLimitCode" />
+          <ScalarProperty Name="ProductCodeNCBS" ColumnName="ProductCodeNCBS" />
+          <ScalarProperty Name="ProductCodeMIS" ColumnName="ProductCodeMIS" />
+          <ScalarProperty Name="SukuBunga" ColumnName="SukuBunga" />
+          <ScalarProperty Name="Margin" ColumnName="Margin" />
+          <ScalarProperty Name="BookingLoan" ColumnName="BookingLoan" />
+          <ScalarProperty Name="LimitCode" ColumnName="LimitCode" />
+          <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+          <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Fk_MsStatusLimit_Id" ColumnName="Fk_MsStatusLimit_Id" />
+          <ScalarProperty Name="Outstanding" ColumnName="Outstanding" />
+          <ScalarProperty Name="Plafond" ColumnName="Plafond" />
+          <ScalarProperty Name="TanggalTarikMax" ColumnName="TanggalTarikMax" />
+          <ScalarProperty Name="TanggalTenorMax" ColumnName="TanggalTenorMax" />
+          <ScalarProperty Name="NoSPK" ColumnName="NoSPK" />
+          <ScalarProperty Name="Fk_MsKoperasi_Id" ColumnName="Fk_MsKoperasi_Id" />
+          <ScalarProperty Name="Pk_TrxLimit_Id" ColumnName="Pk_TrxLimit_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

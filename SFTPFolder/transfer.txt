@@ -1,0 +1,5 @@
+cd ..
+cd ..
+cd ..
+cd /flexcube/UATINST/flexcube/host/11/runarea/rjsin
+put  "D:\Interface\NCBS\Out\disbursement_safv_20180118_00013.txt"

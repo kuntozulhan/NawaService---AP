@@ -1,0 +1,85 @@
+  Sub run()
+        Try
+            While True
+                Thread.Sleep(My.Settings.IntThreadInterval)
+
+                Using objDb As NawaDataEntities = New NawaDataEntities
+                    objDb.Configuration.AutoDetectChangesEnabled = False
+                    For Each ObjVw_MigrasiAngsuran As Vw_MigrasiAngsuran In objDb.Vw_MigrasiAngsuran.ToList
+                        Dim dblPlafond As Double = 0
+                        Dim dblMargin As Double = ObjVw_MigrasiAngsuran.MarginEquivalent
+                        Dim IntTenor As Integer = ObjVw_MigrasiAngsuran.Tenor
+
+                        For Each ObjTrxDafnom_Detail As TrxDafnom_Detail In objDb.TrxDafnom_Detail.Where(Function(x) x.Fk_TrxDafnom_OTP_Id = ObjVw_MigrasiAngsuran.Pk_TrxDafnom_OTP_Id).ToList
+                            dblPlafond = ObjTrxDafnom_Detail.Plafond
+
+                            Dim objTrxDafnom_OTP As TrxDafnom_OTP = objDb.TrxDafnom_OTP.Where(Function(x) x.Pk_TrxDafnom_OTP_Id = ObjTrxDafnom_Detail.Fk_TrxDafnom_OTP_Id).FirstOrDefault
+                            If Not objTrxDafnom_OTP Is Nothing Then
+Temp:
+                                objTrxDafnom_OTP.PeriodStart = objTrxDafnom_OTP.TanggalPencairan
+
+                                Dim LastAngsuranDate As Date = objTrxDafnom_OTP.PeriodStart
+                                Dim monthAdd As Date = New Date(Year(objTrxDafnom_OTP.TanggalPencairan), Month(objTrxDafnom_OTP.TanggalPencairan), objTrxDafnom_OTP.TanggalDebetAngsuran) 'Month(objTrxDafnom_OTP.TanggalPencairan) & "/" & objTrxDafnom_OTP.TanggalDebetAngsuran & "/" & Year(objTrxDafnom_OTP.TanggalPencairan)
+                                Dim monthLess As Date = New Date(Year(objTrxDafnom_OTP.PeriodStart), Month(objTrxDafnom_OTP.PeriodStart), objTrxDafnom_OTP.TanggalDebetAngsuran) 'Month(objTrxDafnom_OTP.PeriodStart) & "/" & objTrxDafnom_OTP.TanggalDebetAngsuran & "/" & Year(objTrxDafnom_OTP.PeriodStart)
+                                Dim tempDateAwal As Integer = 0
+
+                                Dim ObjTrxOTP_AngsuranList As List(Of TrxOTP_Angsuran) = ShowAmortSched(dblPlafond, dblMargin, IntTenor)
+                                Dim ObjTrxOTP_AngsuranFirst As New TrxOTP_Angsuran
+                                With ObjTrxOTP_AngsuranFirst
+                                    .Fk_TrxDafnom_OTP_Id = ObjTrxDafnom_Detail.Fk_TrxDafnom_OTP_Id
+                                    .Fk_TrxDafnom_Detail_Id = ObjTrxDafnom_Detail.Pk_TrxDafnom_Detail_Id
+
+                                    If CInt(Day(objTrxDafnom_OTP.TanggalPencairan)) >= CInt(objTrxDafnom_OTP.TanggalDebetAngsuran) Then
+                                        .TanggalAngsuran = objTrxDafnom_OTP.TanggalPencairan
+                                        .AngsuranMargin = 0
+                                    Else
+                                        .TanggalAngsuran = monthAdd
+                                        .AngsuranMargin = ((DateDiff(DateInterval.Day, objTrxDafnom_OTP.TanggalPencairan.GetValueOrDefault(New Date(1900, 1, 1)), monthAdd) + 1) * dblPlafond / 360) * (dblMargin / 12 / 100.0)
+                                    End If
+
+                                    .AngsuranKe = 0
+                                    .SisaPokok = dblPlafond
+                                    .AngsuranPokok = 0
+                                    .TotalAngsuran = 0
+
+                                    objDb.Entry(ObjTrxOTP_AngsuranFirst).State = Data.Entity.EntityState.Added
+                                End With
+
+                                For Each ObjTrxOTP_AngsuranItem As TrxOTP_Angsuran In ObjTrxOTP_AngsuranList
+                                    With ObjTrxOTP_AngsuranItem
+                                        .Fk_TrxDafnom_OTP_Id = ObjTrxDafnom_Detail.Fk_TrxDafnom_OTP_Id
+                                        .Fk_TrxDafnom_Detail_Id = ObjTrxDafnom_Detail.Pk_TrxDafnom_Detail_Id
+                                        If CInt(Day(objTrxDafnom_OTP.TanggalPencairan)) = CInt(objTrxDafnom_OTP.TanggalDebetAngsuran) Then
+                                            LastAngsuranDate = DateAdd(DateInterval.Month, 1, LastAngsuranDate)
+                                            .TanggalAngsuran = LastAngsuranDate
+                                        ElseIf CInt(Day(objTrxDafnom_OTP.TanggalPencairan)) > CInt(objTrxDafnom_OTP.TanggalDebetAngsuran) Then
+                                            monthLess = DateAdd(DateInterval.Month, 1, monthLess)
+                                            .TanggalAngsuran = monthLess
+                                        Else
+                                            tempDateAwal = Day(monthAdd)
+                                            monthAdd = DateAdd(DateInterval.Month, 1, monthAdd)
+
+                                            If CInt(objTrxDafnom_OTP.TanggalDebetAngsuran) <> tempDateAwal Then
+                                                monthAdd = Month(monthAdd) & "/" & objTrxDafnom_OTP.TanggalDebetAngsuran & "/" & Year(monthAdd)
+                                            End If
+                                            tempDateAwal = Day(monthAdd)
+
+                                            .TanggalAngsuran = monthAdd
+
+                                        End If
+                                        objDb.Entry(ObjTrxOTP_AngsuranItem).State = Data.Entity.EntityState.Added
+                                    End With
+                                Next
+                                objDb.SaveChanges()
+
+                            End If
+
+                        Next
+
+                    Next
+                End Using
+            End While
+        Catch ex As Exception
+            mylog.LogError("An Error has been occurred on Create Angsuran Migrasi: ", ex)
+        End Try
+    End Sub

@@ -1,0 +1,1364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NawaDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EODScheduler">
+          <Key>
+            <PropertyRef Name="PK_EODScheduler_ID" />
+          </Key>
+          <Property Name="PK_EODScheduler_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EODSchedulerName" Type="varchar" MaxLength="255" />
+          <Property Name="EODSchedulerDescription" Type="varchar" MaxLength="8000" />
+          <Property Name="HasPeriodikScheduler" Type="bit" />
+          <Property Name="EODPeriod" Type="int" />
+          <Property Name="FK_MsEODPeriod" Type="int" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EODSchedulerDetail">
+          <Key>
+            <PropertyRef Name="PK_EODSchedulerDetail_ID" />
+          </Key>
+          <Property Name="PK_EODSchedulerDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EODSCheduler_ID" Type="bigint" />
+          <Property Name="FK_EODTask_ID" Type="bigint" />
+          <Property Name="OrderNo" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EODSchedulerLog">
+          <Key>
+            <PropertyRef Name="PK_EODSchedulerLog_ID" />
+          </Key>
+          <Property Name="PK_EODSchedulerLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EODSchedulerID" Type="bigint" />
+          <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+          <Property Name="DataDate" Type="datetime" />
+          <Property Name="ProcessDate" Type="datetime" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Enddate" Type="datetime" />
+          <Property Name="ErrorMessage" Type="varchar(max)" />
+          <Property Name="FK_MsEODStatus_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="EODTask">
+          <Key>
+            <PropertyRef Name="PK_EODTask_ID" />
+          </Key>
+          <Property Name="PK_EODTask_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EODTaskName" Type="varchar" MaxLength="50" />
+          <Property Name="EODTaskDescription" Type="varchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="EODTaskDetail">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetail_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetail_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FK_EODTask_ID" Type="bigint" />
+          <Property Name="FK_EODTaskDetailType_ID" Type="int" />
+          <Property Name="OrderNo" Type="int" />
+          <Property Name="SSISName" Type="varchar" MaxLength="250" />
+          <Property Name="SSISFIle" Type="varbinary(max)" />
+          <Property Name="StoreProcedureName" Type="varchar" MaxLength="250" />
+          <Property Name="Keterangan" Type="varchar" MaxLength="8000" />
+          <Property Name="IsUseParameterProcessDate" Type="bit" />
+        </EntityType>
+        <EntityType Name="EODTaskDetailLog">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetailLog_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetailLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EODSchedulerLogID" Type="bigint" />
+          <Property Name="EODTaskLogID" Type="bigint" />
+          <Property Name="FK_EODTAskDetail_ID" Type="bigint" />
+          <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Enddate" Type="datetime" />
+          <Property Name="ErrorMessage" Type="varchar(max)" />
+          <Property Name="FK_MsEODStatus_ID" Type="int" />
+          <Property Name="executionID" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="EODTaskDetailType">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetailType_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetailType_ID" Type="int" Nullable="false" />
+          <Property Name="EODTaskDetailType" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EODTaskLog">
+          <Key>
+            <PropertyRef Name="PK_EODTaskLog_ID" />
+          </Key>
+          <Property Name="PK_EODTaskLog_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EODSchedulerLogID" Type="bigint" />
+          <Property Name="FK_EODTaskID" Type="bigint" />
+          <Property Name="ExecuteBy" Type="varchar" MaxLength="250" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="Enddate" Type="datetime" />
+          <Property Name="ErrorMessage" Type="varchar(max)" />
+          <Property Name="FK_MsEODStatus_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="LogConsoleService">
+          <Key>
+            <PropertyRef Name="Pk_LogConsoleService_Id" />
+          </Key>
+          <Property Name="Pk_LogConsoleService_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogCreatedDate" Type="datetime" />
+          <Property Name="LogStatus" Type="varchar" MaxLength="255" />
+          <Property Name="LogInfo" Type="varchar(max)" />
+          <Property Name="LogDescription" Type="varchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SAFVUAT.dbo.NawaDataETLConfigurations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NawaDataETLConfigurations">
+          <Key>
+            <PropertyRef Name="ConfigurationFilter" />
+            <PropertyRef Name="PackagePath" />
+            <PropertyRef Name="ConfiguredValueType" />
+          </Key>
+          <Property Name="ConfigurationFilter" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ConfiguredValue" Type="nvarchar" MaxLength="255" />
+          <Property Name="PackagePath" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ConfiguredValueType" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SystemParameter">
+          <Key>
+            <PropertyRef Name="PK_SystemParameter_ID" />
+          </Key>
+          <Property Name="PK_SystemParameter_ID" Type="int" Nullable="false" />
+          <Property Name="FK_SystemParameterGroup_ID" Type="int" />
+          <Property Name="SettingName" Type="varchar" MaxLength="250" />
+          <Property Name="SettingValue" Type="varchar" MaxLength="250" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Hide" Type="bit" />
+          <Property Name="fk_MFieldType_ID" Type="int" />
+          <Property Name="IsEncript" Type="bit" />
+          <Property Name="EncriptionKey" Type="varchar" MaxLength="550" />
+        </EntityType>
+        <EntityType Name="TrxDafnom">
+          <Key>
+            <PropertyRef Name="Pk_TrxDafnom_Id" />
+          </Key>
+          <Property Name="Pk_TrxDafnom_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_MsKoperasi_Id" Type="bigint" />
+          <Property Name="Fk_TrxLimit_Id" Type="bigint" />
+          <Property Name="Batch" Type="int" />
+          <Property Name="TotalPengajuan" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Fk_MsStatusDafnom_Id" Type="int" />
+          <Property Name="Fk_MsStatusDokumen_Id" Type="int" />
+          <Property Name="ApprovalReason" Type="varchar(max)" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TrxDafnom_Detail">
+          <Key>
+            <PropertyRef Name="Pk_TrxDafnom_Detail_Id" />
+          </Key>
+          <Property Name="Pk_TrxDafnom_Detail_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_TrxDafnom_Id" Type="bigint" Nullable="false" />
+          <Property Name="Fk_TrxDafnom_OTP_Id" Type="bigint" />
+          <Property Name="NamaKaryawan" Type="varchar" MaxLength="255" />
+          <Property Name="NoKTP" Type="varchar" MaxLength="50" />
+          <Property Name="NIK" Type="varchar" MaxLength="50" />
+          <Property Name="TanggalLahir" Type="datetime" />
+          <Property Name="NoTelepon" Type="varchar" MaxLength="50" />
+          <Property Name="TanggalPengangkatan" Type="datetime" />
+          <Property Name="MasaKerja" Type="int" />
+          <Property Name="Fk_MsTujuanPembiayaan_Id" Type="int" />
+          <Property Name="Plafond" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Tenor" Type="int" />
+          <Property Name="Angsuran" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TakeHomePay" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="AngsuranKoperasiYgDimiliki" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="OutstandingTerakhir" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Fk_MsSumberDana_Id" Type="int" />
+          <Property Name="SisaJangkaWaktu" Type="int" />
+          <Property Name="IIR" Type="numeric" Precision="6" Scale="2" />
+          <Property Name="RekeningAtasNama" Type="varchar" MaxLength="255" />
+          <Property Name="RekeningNamaBank" Type="varchar" MaxLength="50" />
+          <Property Name="RekeningNomor" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TrxDafnom_OTP">
+          <Key>
+            <PropertyRef Name="Pk_TrxDafnom_OTP_Id" />
+          </Key>
+          <Property Name="Pk_TrxDafnom_OTP_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_TrxDafnom_Id" Type="bigint" />
+          <Property Name="Tenor" Type="int" />
+          <Property Name="MsAccountOfficerCode" Type="varchar" MaxLength="50" />
+          <Property Name="MsMISCode" Type="varchar" MaxLength="50" />
+          <Property Name="MsProductCode" Type="varchar" MaxLength="50" />
+          <Property Name="Fk_MsJenisOTP_Id" Type="int" />
+          <Property Name="NoPromes" Type="varchar" MaxLength="50" />
+          <Property Name="TanggalPencairan" Type="datetime" />
+          <Property Name="PeriodStart" Type="datetime" />
+          <Property Name="PeriodEnd" Type="datetime" />
+          <Property Name="Nominal" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="MarginEquivalent" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="NisbahBagiHasilBank" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="NisbahBagiHasilNasabah" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="Fk_MsKondisiMargin_Id" Type="int" />
+          <Property Name="TanggalDebetAngsuran" Type="int" />
+          <Property Name="Fk_MsJenisPencairan_Id" Type="int" />
+          <Property Name="BiayaRTGS" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="Fk_MsStatusOTP_Id" Type="int" />
+          <Property Name="Fk_MsStatusDokumen_Id" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="ApprovalReason" Type="varchar(max)" />
+          <Property Name="LTSApprovalReason" Type="varchar(max)" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="20" />
+          <Property Name="NomorRekeningCASA" Type="varchar" MaxLength="20" />
+          <Property Name="MsScheduleCode" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TrxDafnom_Print">
+          <Key>
+            <PropertyRef Name="Pk_TrxDafnom_Print_Id" />
+          </Key>
+          <Property Name="Pk_TrxDafnom_Print_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_TrxDafnom_Id" Type="bigint" />
+          <Property Name="AttachmentFileName" Type="varchar" MaxLength="1000" />
+          <Property Name="AttachmentFileContent" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TrxLimit">
+          <Key>
+            <PropertyRef Name="Pk_TrxLimit_Id" />
+          </Key>
+          <Property Name="Pk_TrxLimit_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_MsKoperasi_Id" Type="int" Nullable="false" />
+          <Property Name="NoSPK" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TanggalTenorMax" Type="datetime" />
+          <Property Name="TanggalTarikMax" Type="datetime" Nullable="false" />
+          <Property Name="Plafond" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="Outstanding" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="Fk_MsStatusLimit_Id" Type="int" Nullable="false" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="LimitCode" Type="varchar" MaxLength="50" />
+          <Property Name="BookingLoan" Type="varchar" MaxLength="50" />
+          <Property Name="Margin" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="SukuBunga" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="ProductCodeMIS" Type="varchar" MaxLength="50" />
+          <Property Name="ProductCodeNCBS" Type="varchar" MaxLength="50" />
+          <Property Name="ParentLimitCode" Type="varchar" MaxLength="20" />
+          <Property Name="MsBranchCode" Type="varchar" MaxLength="50" />
+          <Property Name="SisaLimit" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="CappingDeviasi" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="CappingPlafon" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="CappingPlafonPercent" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="CappingIIR" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="CappingIIRPercent" Type="numeric" Precision="28" Scale="2" />
+          <Property Name="ScheduleCode" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TrxOTP_Angsuran">
+          <Key>
+            <PropertyRef Name="Pk_TrxOTP_Angsuran_Id" />
+          </Key>
+          <Property Name="Pk_TrxOTP_Angsuran_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_TrxDafnom_OTP_Id" Type="bigint" />
+          <Property Name="Fk_TrxDafnom_Detail_Id" Type="bigint" />
+          <Property Name="AngsuranKe" Type="int" />
+          <Property Name="TanggalAngsuran" Type="datetime" />
+          <Property Name="SisaPokok" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="AngsuranPokok" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="AngsuranMargin" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TotalAngsuran" Type="numeric" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TrxOTP_NCBSFile">
+          <Key>
+            <PropertyRef Name="Pk_TrxOTP_NCBSFile_Id" />
+          </Key>
+          <Property Name="Pk_TrxOTP_NCBSFile_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_TrxDafnom_OTP_Id" Type="bigint" />
+          <Property Name="NCBSFileName" Type="varchar" MaxLength="255" />
+          <Property Name="NCBSFileContent" Type="varbinary(max)" />
+          <Property Name="Fk_MsStatusPengiriman_Id" Type="int" />
+          <Property Name="Fk_MsNCBSFileType_Id" Type="int" />
+          <Property Name="GeneratedDate" Type="datetime" />
+          <Property Name="SendDate" Type="datetime" />
+          <Property Name="ResponseDate" Type="datetime" />
+          <Property Name="ErrorMessage" Type="varchar(max)" />
+          <Property Name="ResponseFileName" Type="varchar" MaxLength="255" />
+          <Property Name="ResponseFileContent" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TrxOTP_Pelunasan">
+          <Key>
+            <PropertyRef Name="Pk_TrxOTP_Pelunasan_Id" />
+          </Key>
+          <Property Name="Pk_TrxOTP_Pelunasan_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fk_TrxDafnom_OTP_Id" Type="bigint" />
+          <Property Name="Fk_MsJenisOTPPelunasan_Id" Type="int" />
+          <Property Name="TotalPelunasan" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Fk_MsJenisRecalculatePelunasan_Id" Type="int" />
+          <Property Name="Fk_MsStatusPelunasan_Id" Type="int" />
+          <Property Name="Fk_MsStatusDokumen_Id" Type="int" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="LastUpdateDate" Type="datetime" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="ApprovalReason" Type="varchar(max)" />
+          <Property Name="TotalOutstanding" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TotalMarginBerjalan" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TunggakanMargin" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="TunggakanDenda" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="No_Urut" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SAFVUAT.dbo.Vw_MigrasiAngsuran' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Vw_MigrasiAngsuran">
+          <Key>
+            <PropertyRef Name="CIFNo" />
+            <PropertyRef Name="Fk_TrxDafnom_Id" />
+            <PropertyRef Name="Tenor" />
+            <PropertyRef Name="Fk_MsJenisOTP_Id" />
+            <PropertyRef Name="NisbahBagiHasilBank" />
+            <PropertyRef Name="NisbahBagiHasilNasabah" />
+            <PropertyRef Name="Fk_MsKondisiMargin_Id" />
+            <PropertyRef Name="Fk_MsJenisPencairan_Id" />
+            <PropertyRef Name="Fk_MsStatusOTP_Id" />
+            <PropertyRef Name="Fk_MsStatusDokumen_Id" />
+            <PropertyRef Name="CreatedDate" />
+            <PropertyRef Name="LastUpdateDate" />
+            <PropertyRef Name="ApprovedDate" />
+            <PropertyRef Name="ApprovalReason" />
+            <PropertyRef Name="LTSApprovalReason" />
+            <PropertyRef Name="NomorRekeningCASA" />
+            <PropertyRef Name="Pk_TrxDafnom_OTP_Id" />
+          </Key>
+          <Property Name="CIFNo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LimitCode" Type="varchar" MaxLength="90" />
+          <Property Name="Batch" Type="smallint" />
+          <Property Name="Fk_TrxDafnom_Id" Type="bigint" Nullable="false" />
+          <Property Name="Tenor" Type="tinyint" Nullable="false" />
+          <Property Name="Fk_MsJenisOTP_Id" Type="int" Nullable="false" />
+          <Property Name="TanggalPencairan" Type="datetime" />
+          <Property Name="Nominal" Type="numeric" Precision="38" Scale="2" />
+          <Property Name="NisbahBagiHasilBank" Type="int" Nullable="false" />
+          <Property Name="NisbahBagiHasilNasabah" Type="int" Nullable="false" />
+          <Property Name="Fk_MsKondisiMargin_Id" Type="int" Nullable="false" />
+          <Property Name="TanggalDebetAngsuran" Type="int" />
+          <Property Name="Fk_MsJenisPencairan_Id" Type="int" Nullable="false" />
+          <Property Name="Fk_MsStatusOTP_Id" Type="int" Nullable="false" />
+          <Property Name="Fk_MsStatusDokumen_Id" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+          <Property Name="LastUpdateBy" Type="varchar" MaxLength="50" />
+          <Property Name="ApprovedBy" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="ApprovedDate" Type="datetime" Nullable="false" />
+          <Property Name="ApprovalReason" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="LTSApprovalReason" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="50" />
+          <Property Name="NomorRekeningCASA" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="MarginEquivalent" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Pk_TrxDafnom_OTP_Id" Type="bigint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_TrxDafnom_Detail_TrxDafnom">
+          <End Role="TrxDafnom" Type="Self.TrxDafnom" Multiplicity="1" />
+          <End Role="TrxDafnom_Detail" Type="Self.TrxDafnom_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrxDafnom">
+              <PropertyRef Name="Pk_TrxDafnom_Id" />
+            </Principal>
+            <Dependent Role="TrxDafnom_Detail">
+              <PropertyRef Name="Fk_TrxDafnom_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrxDafnom_Detail_TrxDafnom_OTP">
+          <End Role="TrxDafnom_OTP" Type="Self.TrxDafnom_OTP" Multiplicity="0..1" />
+          <End Role="TrxDafnom_Detail" Type="Self.TrxDafnom_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrxDafnom_OTP">
+              <PropertyRef Name="Pk_TrxDafnom_OTP_Id" />
+            </Principal>
+            <Dependent Role="TrxDafnom_Detail">
+              <PropertyRef Name="Fk_TrxDafnom_OTP_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrxDafnom_OTP_TrxDafnom">
+          <End Role="TrxDafnom" Type="Self.TrxDafnom" Multiplicity="0..1" />
+          <End Role="TrxDafnom_OTP" Type="Self.TrxDafnom_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrxDafnom">
+              <PropertyRef Name="Pk_TrxDafnom_Id" />
+            </Principal>
+            <Dependent Role="TrxDafnom_OTP">
+              <PropertyRef Name="Fk_TrxDafnom_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="NawaDataModelStoreContainer">
+          <EntitySet Name="EODScheduler" EntityType="Self.EODScheduler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODSchedulerDetail" EntityType="Self.EODSchedulerDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODSchedulerLog" EntityType="Self.EODSchedulerLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTask" EntityType="Self.EODTask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTaskDetail" EntityType="Self.EODTaskDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTaskDetailLog" EntityType="Self.EODTaskDetailLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTaskDetailType" EntityType="Self.EODTaskDetailType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EODTaskLog" EntityType="Self.EODTaskLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogConsoleService" EntityType="Self.LogConsoleService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SystemParameter" EntityType="Self.SystemParameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrxDafnom" EntityType="Self.TrxDafnom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrxDafnom_Detail" EntityType="Self.TrxDafnom_Detail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrxDafnom_OTP" EntityType="Self.TrxDafnom_OTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrxDafnom_Print" EntityType="Self.TrxDafnom_Print" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrxLimit" EntityType="Self.TrxLimit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrxOTP_Angsuran" EntityType="Self.TrxOTP_Angsuran" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrxOTP_NCBSFile" EntityType="Self.TrxOTP_NCBSFile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TrxOTP_Pelunasan" EntityType="Self.TrxOTP_Pelunasan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NawaDataETLConfigurations" EntityType="Self.NawaDataETLConfigurations" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NawaDataETLConfigurations].[ConfigurationFilter] AS [ConfigurationFilter], 
+    [NawaDataETLConfigurations].[ConfiguredValue] AS [ConfiguredValue], 
+    [NawaDataETLConfigurations].[PackagePath] AS [PackagePath], 
+    [NawaDataETLConfigurations].[ConfiguredValueType] AS [ConfiguredValueType]
+    FROM [dbo].[NawaDataETLConfigurations] AS [NawaDataETLConfigurations]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Vw_MigrasiAngsuran" EntityType="Self.Vw_MigrasiAngsuran" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Vw_MigrasiAngsuran].[CIFNo] AS [CIFNo], 
+    [Vw_MigrasiAngsuran].[LimitCode] AS [LimitCode], 
+    [Vw_MigrasiAngsuran].[Batch] AS [Batch], 
+    [Vw_MigrasiAngsuran].[Fk_TrxDafnom_Id] AS [Fk_TrxDafnom_Id], 
+    [Vw_MigrasiAngsuran].[Tenor] AS [Tenor], 
+    [Vw_MigrasiAngsuran].[Fk_MsJenisOTP_Id] AS [Fk_MsJenisOTP_Id], 
+    [Vw_MigrasiAngsuran].[TanggalPencairan] AS [TanggalPencairan], 
+    [Vw_MigrasiAngsuran].[Nominal] AS [Nominal], 
+    [Vw_MigrasiAngsuran].[NisbahBagiHasilBank] AS [NisbahBagiHasilBank], 
+    [Vw_MigrasiAngsuran].[NisbahBagiHasilNasabah] AS [NisbahBagiHasilNasabah], 
+    [Vw_MigrasiAngsuran].[Fk_MsKondisiMargin_Id] AS [Fk_MsKondisiMargin_Id], 
+    [Vw_MigrasiAngsuran].[TanggalDebetAngsuran] AS [TanggalDebetAngsuran], 
+    [Vw_MigrasiAngsuran].[Fk_MsJenisPencairan_Id] AS [Fk_MsJenisPencairan_Id], 
+    [Vw_MigrasiAngsuran].[Fk_MsStatusOTP_Id] AS [Fk_MsStatusOTP_Id], 
+    [Vw_MigrasiAngsuran].[Fk_MsStatusDokumen_Id] AS [Fk_MsStatusDokumen_Id], 
+    [Vw_MigrasiAngsuran].[CreatedBy] AS [CreatedBy], 
+    [Vw_MigrasiAngsuran].[LastUpdateBy] AS [LastUpdateBy], 
+    [Vw_MigrasiAngsuran].[ApprovedBy] AS [ApprovedBy], 
+    [Vw_MigrasiAngsuran].[CreatedDate] AS [CreatedDate], 
+    [Vw_MigrasiAngsuran].[LastUpdateDate] AS [LastUpdateDate], 
+    [Vw_MigrasiAngsuran].[ApprovedDate] AS [ApprovedDate], 
+    [Vw_MigrasiAngsuran].[ApprovalReason] AS [ApprovalReason], 
+    [Vw_MigrasiAngsuran].[LTSApprovalReason] AS [LTSApprovalReason], 
+    [Vw_MigrasiAngsuran].[AccountNo] AS [AccountNo], 
+    [Vw_MigrasiAngsuran].[NomorRekeningCASA] AS [NomorRekeningCASA], 
+    [Vw_MigrasiAngsuran].[MarginEquivalent] AS [MarginEquivalent], 
+    [Vw_MigrasiAngsuran].[Pk_TrxDafnom_OTP_Id] AS [Pk_TrxDafnom_OTP_Id]
+    FROM [dbo].[Vw_MigrasiAngsuran] AS [Vw_MigrasiAngsuran]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_TrxDafnom_Detail_TrxDafnom" Association="Self.FK_TrxDafnom_Detail_TrxDafnom">
+            <End Role="TrxDafnom" EntitySet="TrxDafnom" />
+            <End Role="TrxDafnom_Detail" EntitySet="TrxDafnom_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrxDafnom_Detail_TrxDafnom_OTP" Association="Self.FK_TrxDafnom_Detail_TrxDafnom_OTP">
+            <End Role="TrxDafnom_OTP" EntitySet="TrxDafnom_OTP" />
+            <End Role="TrxDafnom_Detail" EntitySet="TrxDafnom_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrxDafnom_OTP_TrxDafnom" Association="Self.FK_TrxDafnom_OTP_TrxDafnom">
+            <End Role="TrxDafnom" EntitySet="TrxDafnom" />
+            <End Role="TrxDafnom_OTP" EntitySet="TrxDafnom_OTP" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NawaDataModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NawaDataEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="EODSchedulers" EntityType="NawaDataModel.EODScheduler" />
+          <EntitySet Name="EODSchedulerDetails" EntityType="NawaDataModel.EODSchedulerDetail" />
+          <EntitySet Name="EODSchedulerLogs" EntityType="NawaDataModel.EODSchedulerLog" />
+          <EntitySet Name="EODTasks" EntityType="NawaDataModel.EODTask" />
+          <EntitySet Name="EODTaskDetails" EntityType="NawaDataModel.EODTaskDetail" />
+          <EntitySet Name="EODTaskDetailLogs" EntityType="NawaDataModel.EODTaskDetailLog" />
+          <EntitySet Name="EODTaskDetailTypes" EntityType="NawaDataModel.EODTaskDetailType" />
+          <EntitySet Name="EODTaskLogs" EntityType="NawaDataModel.EODTaskLog" />
+          <EntitySet Name="SystemParameters" EntityType="NawaDataModel.SystemParameter" />
+          <EntitySet Name="LogConsoleServices" EntityType="NawaDataModel.LogConsoleService" />
+          <EntitySet Name="TrxDafnom_Print" EntityType="NawaDataModel.TrxDafnom_Print" />
+          <EntitySet Name="TrxDafnom_OTP" EntityType="NawaDataModel.TrxDafnom_OTP" />
+          <EntitySet Name="TrxDafnoms" EntityType="NawaDataModel.TrxDafnom" />
+          <AssociationSet Name="FK_TrxDafnom_OTP_TrxDafnom" Association="NawaDataModel.FK_TrxDafnom_OTP_TrxDafnom">
+            <End Role="TrxDafnom" EntitySet="TrxDafnoms" />
+            <End Role="TrxDafnom_OTP" EntitySet="TrxDafnom_OTP" />
+          </AssociationSet>
+          <EntitySet Name="TrxOTP_NCBSFile" EntityType="NawaDataModel.TrxOTP_NCBSFile" />
+          <EntitySet Name="TrxOTP_Angsuran" EntityType="NawaDataModel.TrxOTP_Angsuran" />
+          <EntitySet Name="TrxDafnom_Detail" EntityType="NawaDataModel.TrxDafnom_Detail" />
+          <AssociationSet Name="FK_TrxDafnom_Detail_TrxDafnom" Association="NawaDataModel.FK_TrxDafnom_Detail_TrxDafnom">
+            <End Role="TrxDafnom" EntitySet="TrxDafnoms" />
+            <End Role="TrxDafnom_Detail" EntitySet="TrxDafnom_Detail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TrxDafnom_Detail_TrxDafnom_OTP" Association="NawaDataModel.FK_TrxDafnom_Detail_TrxDafnom_OTP">
+            <End Role="TrxDafnom_OTP" EntitySet="TrxDafnom_OTP" />
+            <End Role="TrxDafnom_Detail" EntitySet="TrxDafnom_Detail" />
+          </AssociationSet>
+          <EntitySet Name="Vw_MigrasiAngsuran" EntityType="NawaDataModel.Vw_MigrasiAngsuran" />
+          <EntitySet Name="NawaDataETLConfigurations" EntityType="NawaDataModel.NawaDataETLConfiguration" />
+          <EntitySet Name="TrxOTP_Pelunasan" EntityType="NawaDataModel.TrxOTP_Pelunasan" />
+          <EntitySet Name="TrxLimits" EntityType="NawaDataModel.TrxLimit" />
+        </EntityContainer>
+        <EntityType Name="EODScheduler">
+          <Key>
+            <PropertyRef Name="PK_EODScheduler_ID" />
+          </Key>
+          <Property Name="PK_EODScheduler_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EODSchedulerName" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="EODSchedulerDescription" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+          <Property Name="EODPeriod" Type="Int32" />
+          <Property Name="FK_MsEODPeriod" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="HasPeriodikScheduler" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="EODSchedulerDetail">
+          <Key>
+            <PropertyRef Name="PK_EODSchedulerDetail_ID" />
+          </Key>
+          <Property Name="PK_EODSchedulerDetail_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EODSCheduler_ID" Type="Int64" />
+          <Property Name="FK_EODTask_ID" Type="Int64" />
+          <Property Name="OrderNo" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EODSchedulerLog">
+          <Key>
+            <PropertyRef Name="PK_EODSchedulerLog_ID" />
+          </Key>
+          <Property Name="PK_EODSchedulerLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EODSchedulerID" Type="Int64" />
+          <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="ProcessDate" Type="DateTime" Precision="3" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Enddate" Type="DateTime" Precision="3" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+          <Property Type="DateTime" Name="DataDate" Precision="3" />
+        </EntityType>
+        <EntityType Name="EODTask">
+          <Key>
+            <PropertyRef Name="PK_EODTask_ID" />
+          </Key>
+          <Property Name="PK_EODTask_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EODTaskName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EODTaskDescription" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EODTaskDetail">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetail_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetail_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FK_EODTask_ID" Type="Int64" />
+          <Property Name="FK_EODTaskDetailType_ID" Type="Int32" />
+          <Property Name="OrderNo" Type="Int32" />
+          <Property Name="SSISName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="SSISFIle" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="StoreProcedureName" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="Keterangan" Type="String" MaxLength="8000" Unicode="false" FixedLength="false" />
+          <Property Name="IsUseParameterProcessDate" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="EODTaskDetailLog">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetailLog_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetailLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EODSchedulerLogID" Type="Int64" />
+          <Property Name="EODTaskLogID" Type="Int64" />
+          <Property Name="FK_EODTAskDetail_ID" Type="Int64" />
+          <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Enddate" Type="DateTime" Precision="3" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+          <Property Name="executionID" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="EODTaskDetailType">
+          <Key>
+            <PropertyRef Name="PK_EODTaskDetailType_ID" />
+          </Key>
+          <Property Name="PK_EODTaskDetailType_ID" Type="Int32" Nullable="false" />
+          <Property Name="EODTaskDetailType1" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="EODTaskLog">
+          <Key>
+            <PropertyRef Name="PK_EODTaskLog_ID" />
+          </Key>
+          <Property Name="PK_EODTaskLog_ID" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EODSchedulerLogID" Type="Int64" />
+          <Property Name="FK_EODTaskID" Type="Int64" />
+          <Property Name="ExecuteBy" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="Enddate" Type="DateTime" Precision="3" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="FK_MsEODStatus_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SystemParameter">
+          <Key>
+            <PropertyRef Name="PK_SystemParameter_ID" />
+          </Key>
+          <Property Type="Int32" Name="PK_SystemParameter_ID" Nullable="false" />
+          <Property Type="Int32" Name="FK_SystemParameterGroup_ID" />
+          <Property Type="String" Name="SettingName" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="SettingValue" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Active" />
+          <Property Name="Hide" Type="Boolean" />
+          <Property Name="fk_MFieldType_ID" Type="Int32" />
+          <Property Name="IsEncript" Type="Boolean" />
+          <Property Name="EncriptionKey" Type="String" MaxLength="550" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LogConsoleService">
+          <Key>
+            <PropertyRef Name="Pk_LogConsoleService_Id" />
+          </Key>
+          <Property Name="Pk_LogConsoleService_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogCreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LogStatus" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LogInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LogDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TrxDafnom_Print">
+          <Key>
+            <PropertyRef Name="Pk_TrxDafnom_Print_Id" />
+          </Key>
+          <Property Name="Pk_TrxDafnom_Print_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_TrxDafnom_Id" Type="Int64" />
+          <Property Name="AttachmentFileName" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="AttachmentFileContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TrxDafnom_OTP">
+          <Key>
+            <PropertyRef Name="Pk_TrxDafnom_OTP_Id" />
+          </Key>
+          <Property Name="Pk_TrxDafnom_OTP_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_TrxDafnom_Id" Type="Int64" />
+          <Property Name="Tenor" Type="Int32" />
+          <Property Name="MsAccountOfficerCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MsMISCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MsProductCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Fk_MsJenisOTP_Id" Type="Int32" />
+          <Property Name="NoPromes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TanggalPencairan" Type="DateTime" Precision="3" />
+          <Property Name="PeriodStart" Type="DateTime" Precision="3" />
+          <Property Name="PeriodEnd" Type="DateTime" Precision="3" />
+          <Property Name="Nominal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MarginEquivalent" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="NisbahBagiHasilBank" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="NisbahBagiHasilNasabah" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="Fk_MsKondisiMargin_Id" Type="Int32" />
+          <Property Name="TanggalDebetAngsuran" Type="Int32" />
+          <Property Name="Fk_MsJenisPencairan_Id" Type="Int32" />
+          <Property Name="BiayaRTGS" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="Fk_MsStatusOTP_Id" Type="Int32" />
+          <Property Name="Fk_MsStatusDokumen_Id" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovalReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="LTSApprovalReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TrxDafnom" Relationship="NawaDataModel.FK_TrxDafnom_OTP_TrxDafnom" FromRole="TrxDafnom_OTP" ToRole="TrxDafnom" />
+          <Property Name="NomorRekeningCASA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TrxDafnom_Detail" Relationship="NawaDataModel.FK_TrxDafnom_Detail_TrxDafnom_OTP" FromRole="TrxDafnom_OTP" ToRole="TrxDafnom_Detail" />
+          <Property Name="MsScheduleCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TrxDafnom">
+          <Key>
+            <PropertyRef Name="Pk_TrxDafnom_Id" />
+          </Key>
+          <Property Name="Pk_TrxDafnom_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_MsKoperasi_Id" Type="Int64" />
+          <Property Name="Fk_TrxLimit_Id" Type="Int64" />
+          <Property Name="Batch" Type="Int32" />
+          <Property Name="TotalPengajuan" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Fk_MsStatusDafnom_Id" Type="Int32" />
+          <Property Name="Fk_MsStatusDokumen_Id" Type="Int32" />
+          <Property Name="ApprovalReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="TrxDafnom_OTP" Relationship="NawaDataModel.FK_TrxDafnom_OTP_TrxDafnom" FromRole="TrxDafnom" ToRole="TrxDafnom_OTP" />
+          <NavigationProperty Name="TrxDafnom_Detail" Relationship="NawaDataModel.FK_TrxDafnom_Detail_TrxDafnom" FromRole="TrxDafnom" ToRole="TrxDafnom_Detail" />
+        </EntityType>
+        <Association Name="FK_TrxDafnom_OTP_TrxDafnom">
+          <End Type="NawaDataModel.TrxDafnom" Role="TrxDafnom" Multiplicity="0..1" />
+          <End Type="NawaDataModel.TrxDafnom_OTP" Role="TrxDafnom_OTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrxDafnom">
+              <PropertyRef Name="Pk_TrxDafnom_Id" />
+            </Principal>
+            <Dependent Role="TrxDafnom_OTP">
+              <PropertyRef Name="Fk_TrxDafnom_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TrxOTP_NCBSFile">
+          <Key>
+            <PropertyRef Name="Pk_TrxOTP_NCBSFile_Id" />
+          </Key>
+          <Property Name="Pk_TrxOTP_NCBSFile_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_TrxDafnom_OTP_Id" Type="Int64" />
+          <Property Name="NCBSFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NCBSFileContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Fk_MsStatusPengiriman_Id" Type="Int32" />
+          <Property Name="Fk_MsNCBSFileType_Id" Type="Int32" />
+          <Property Name="GeneratedDate" Type="DateTime" Precision="3" />
+          <Property Name="SendDate" Type="DateTime" Precision="3" />
+          <Property Name="ResponseDate" Type="DateTime" Precision="3" />
+          <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ResponseFileName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ResponseFileContent" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TrxOTP_Angsuran">
+          <Key>
+            <PropertyRef Name="Pk_TrxOTP_Angsuran_Id" />
+          </Key>
+          <Property Name="Pk_TrxOTP_Angsuran_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_TrxDafnom_OTP_Id" Type="Int64" />
+          <Property Name="Fk_TrxDafnom_Detail_Id" Type="Int64" />
+          <Property Name="AngsuranKe" Type="Int32" />
+          <Property Name="TanggalAngsuran" Type="DateTime" Precision="3" />
+          <Property Name="SisaPokok" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AngsuranPokok" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AngsuranMargin" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalAngsuran" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TrxDafnom_Detail">
+          <Key>
+            <PropertyRef Name="Pk_TrxDafnom_Detail_Id" />
+          </Key>
+          <Property Name="Pk_TrxDafnom_Detail_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_TrxDafnom_Id" Type="Int64" Nullable="false" />
+          <Property Name="Fk_TrxDafnom_OTP_Id" Type="Int64" />
+          <Property Name="NamaKaryawan" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NoKTP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TanggalLahir" Type="DateTime" Precision="3" />
+          <Property Name="NoTelepon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TanggalPengangkatan" Type="DateTime" Precision="3" />
+          <Property Name="MasaKerja" Type="Int32" />
+          <Property Name="Fk_MsTujuanPembiayaan_Id" Type="Int32" />
+          <Property Name="Plafond" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Tenor" Type="Int32" />
+          <Property Name="Angsuran" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TakeHomePay" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AngsuranKoperasiYgDimiliki" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OutstandingTerakhir" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Fk_MsSumberDana_Id" Type="Int32" />
+          <Property Name="SisaJangkaWaktu" Type="Int32" />
+          <Property Name="IIR" Type="Decimal" Precision="6" Scale="2" />
+          <Property Name="RekeningAtasNama" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RekeningNamaBank" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RekeningNomor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TrxDafnom" Relationship="NawaDataModel.FK_TrxDafnom_Detail_TrxDafnom" FromRole="TrxDafnom_Detail" ToRole="TrxDafnom" />
+          <NavigationProperty Name="TrxDafnom_OTP" Relationship="NawaDataModel.FK_TrxDafnom_Detail_TrxDafnom_OTP" FromRole="TrxDafnom_Detail" ToRole="TrxDafnom_OTP" />
+        </EntityType>
+        <Association Name="FK_TrxDafnom_Detail_TrxDafnom">
+          <End Type="NawaDataModel.TrxDafnom" Role="TrxDafnom" Multiplicity="1" />
+          <End Type="NawaDataModel.TrxDafnom_Detail" Role="TrxDafnom_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrxDafnom">
+              <PropertyRef Name="Pk_TrxDafnom_Id" />
+            </Principal>
+            <Dependent Role="TrxDafnom_Detail">
+              <PropertyRef Name="Fk_TrxDafnom_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TrxDafnom_Detail_TrxDafnom_OTP">
+          <End Type="NawaDataModel.TrxDafnom_OTP" Role="TrxDafnom_OTP" Multiplicity="0..1" />
+          <End Type="NawaDataModel.TrxDafnom_Detail" Role="TrxDafnom_Detail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TrxDafnom_OTP">
+              <PropertyRef Name="Pk_TrxDafnom_OTP_Id" />
+            </Principal>
+            <Dependent Role="TrxDafnom_Detail">
+              <PropertyRef Name="Fk_TrxDafnom_OTP_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Vw_MigrasiAngsuran">
+          <Key>
+            <PropertyRef Name="CIFNo" />
+            <PropertyRef Name="Fk_TrxDafnom_Id" />
+            <PropertyRef Name="Tenor" />
+            <PropertyRef Name="Fk_MsJenisOTP_Id" />
+            <PropertyRef Name="NisbahBagiHasilBank" />
+            <PropertyRef Name="NisbahBagiHasilNasabah" />
+            <PropertyRef Name="Fk_MsKondisiMargin_Id" />
+            <PropertyRef Name="Fk_MsJenisPencairan_Id" />
+            <PropertyRef Name="Fk_MsStatusOTP_Id" />
+            <PropertyRef Name="Fk_MsStatusDokumen_Id" />
+            <PropertyRef Name="CreatedDate" />
+            <PropertyRef Name="LastUpdateDate" />
+            <PropertyRef Name="ApprovedDate" />
+            <PropertyRef Name="ApprovalReason" />
+            <PropertyRef Name="LTSApprovalReason" />
+            <PropertyRef Name="NomorRekeningCASA" />
+            <PropertyRef Name="Pk_TrxDafnom_OTP_Id" />
+          </Key>
+          <Property Name="CIFNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LimitCode" Type="String" MaxLength="90" FixedLength="false" Unicode="false" />
+          <Property Name="Batch" Type="Int16" />
+          <Property Name="Fk_TrxDafnom_Id" Type="Int64" Nullable="false" />
+          <Property Name="Tenor" Type="Byte" Nullable="false" />
+          <Property Name="Fk_MsJenisOTP_Id" Type="Int32" Nullable="false" />
+          <Property Name="TanggalPencairan" Type="DateTime" Precision="3" />
+          <Property Name="Nominal" Type="Decimal" Precision="38" Scale="2" />
+          <Property Name="NisbahBagiHasilBank" Type="Int32" Nullable="false" />
+          <Property Name="NisbahBagiHasilNasabah" Type="Int32" Nullable="false" />
+          <Property Name="Fk_MsKondisiMargin_Id" Type="Int32" Nullable="false" />
+          <Property Name="TanggalDebetAngsuran" Type="Int32" />
+          <Property Name="Fk_MsJenisPencairan_Id" Type="Int32" Nullable="false" />
+          <Property Name="Fk_MsStatusOTP_Id" Type="Int32" Nullable="false" />
+          <Property Name="Fk_MsStatusDokumen_Id" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ApprovalReason" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="LTSApprovalReason" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NomorRekeningCASA" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="MarginEquivalent" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Pk_TrxDafnom_OTP_Id" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NawaDataETLConfiguration">
+          <Key>
+            <PropertyRef Name="ConfigurationFilter" />
+            <PropertyRef Name="PackagePath" />
+            <PropertyRef Name="ConfiguredValueType" />
+          </Key>
+          <Property Name="ConfigurationFilter" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ConfiguredValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PackagePath" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ConfiguredValueType" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TrxOTP_Pelunasan">
+          <Key>
+            <PropertyRef Name="Pk_TrxOTP_Pelunasan_Id" />
+          </Key>
+          <Property Name="Pk_TrxOTP_Pelunasan_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_TrxDafnom_OTP_Id" Type="Int64" />
+          <Property Name="Fk_MsJenisOTPPelunasan_Id" Type="Int32" />
+          <Property Name="TotalPelunasan" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Fk_MsJenisRecalculatePelunasan_Id" Type="Int32" />
+          <Property Name="Fk_MsStatusPelunasan_Id" Type="Int32" />
+          <Property Name="Fk_MsStatusDokumen_Id" Type="Int32" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovalReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TotalOutstanding" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TotalMarginBerjalan" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TunggakanMargin" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TunggakanDenda" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="No_Urut" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TrxLimit">
+          <Key>
+            <PropertyRef Name="Pk_TrxLimit_Id" />
+          </Key>
+          <Property Name="Pk_TrxLimit_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fk_MsKoperasi_Id" Type="Int32" Nullable="false" />
+          <Property Name="NoSPK" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TanggalTenorMax" Type="DateTime" Precision="3" />
+          <Property Name="TanggalTarikMax" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Plafond" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="Outstanding" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="Fk_MsStatusLimit_Id" Type="Int32" Nullable="false" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ApprovedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="LimitCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BookingLoan" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Margin" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="SukuBunga" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="ProductCodeMIS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProductCodeNCBS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ParentLimitCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MsBranchCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SisaLimit" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="CappingDeviasi" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="CappingPlafon" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="CappingPlafonPercent" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="CappingIIR" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="CappingIIRPercent" Type="Decimal" Precision="28" Scale="2" />
+          <Property Name="ScheduleCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NawaDataModelStoreContainer" CdmEntityContainer="NawaDataEntities">
+          <EntitySetMapping Name="EODSchedulers">
+            <EntityTypeMapping TypeName="NawaDataModel.EODScheduler">
+              <MappingFragment StoreEntitySet="EODScheduler">
+                <ScalarProperty Name="HasPeriodikScheduler" ColumnName="HasPeriodikScheduler" />
+                <ScalarProperty Name="PK_EODScheduler_ID" ColumnName="PK_EODScheduler_ID" />
+                <ScalarProperty Name="EODSchedulerName" ColumnName="EODSchedulerName" />
+                <ScalarProperty Name="EODSchedulerDescription" ColumnName="EODSchedulerDescription" />
+                <ScalarProperty Name="EODPeriod" ColumnName="EODPeriod" />
+                <ScalarProperty Name="FK_MsEODPeriod" ColumnName="FK_MsEODPeriod" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODSchedulerDetails">
+            <EntityTypeMapping TypeName="NawaDataModel.EODSchedulerDetail">
+              <MappingFragment StoreEntitySet="EODSchedulerDetail">
+                <ScalarProperty Name="PK_EODSchedulerDetail_ID" ColumnName="PK_EODSchedulerDetail_ID" />
+                <ScalarProperty Name="FK_EODSCheduler_ID" ColumnName="FK_EODSCheduler_ID" />
+                <ScalarProperty Name="FK_EODTask_ID" ColumnName="FK_EODTask_ID" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODSchedulerLogs">
+            <EntityTypeMapping TypeName="NawaDataModel.EODSchedulerLog">
+              <MappingFragment StoreEntitySet="EODSchedulerLog">
+                <ScalarProperty Name="DataDate" ColumnName="DataDate" />
+                <ScalarProperty Name="PK_EODSchedulerLog_ID" ColumnName="PK_EODSchedulerLog_ID" />
+                <ScalarProperty Name="FK_EODSchedulerID" ColumnName="FK_EODSchedulerID" />
+                <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+                <ScalarProperty Name="ProcessDate" ColumnName="ProcessDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTasks">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTask">
+              <MappingFragment StoreEntitySet="EODTask">
+                <ScalarProperty Name="PK_EODTask_ID" ColumnName="PK_EODTask_ID" />
+                <ScalarProperty Name="EODTaskName" ColumnName="EODTaskName" />
+                <ScalarProperty Name="EODTaskDescription" ColumnName="EODTaskDescription" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTaskDetails">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetail">
+              <MappingFragment StoreEntitySet="EODTaskDetail">
+                <ScalarProperty Name="PK_EODTaskDetail_ID" ColumnName="PK_EODTaskDetail_ID" />
+                <ScalarProperty Name="FK_EODTask_ID" ColumnName="FK_EODTask_ID" />
+                <ScalarProperty Name="FK_EODTaskDetailType_ID" ColumnName="FK_EODTaskDetailType_ID" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="SSISName" ColumnName="SSISName" />
+                <ScalarProperty Name="SSISFIle" ColumnName="SSISFIle" />
+                <ScalarProperty Name="StoreProcedureName" ColumnName="StoreProcedureName" />
+                <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+                <ScalarProperty Name="IsUseParameterProcessDate" ColumnName="IsUseParameterProcessDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTaskDetailLogs">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetailLog">
+              <MappingFragment StoreEntitySet="EODTaskDetailLog">
+                <ScalarProperty Name="executionID" ColumnName="executionID" />
+                <ScalarProperty Name="PK_EODTaskDetailLog_ID" ColumnName="PK_EODTaskDetailLog_ID" />
+                <ScalarProperty Name="EODSchedulerLogID" ColumnName="EODSchedulerLogID" />
+                <ScalarProperty Name="EODTaskLogID" ColumnName="EODTaskLogID" />
+                <ScalarProperty Name="FK_EODTAskDetail_ID" ColumnName="FK_EODTAskDetail_ID" />
+                <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTaskDetailTypes">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTaskDetailType">
+              <MappingFragment StoreEntitySet="EODTaskDetailType">
+                <ScalarProperty Name="PK_EODTaskDetailType_ID" ColumnName="PK_EODTaskDetailType_ID" />
+                <ScalarProperty Name="EODTaskDetailType1" ColumnName="EODTaskDetailType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EODTaskLogs">
+            <EntityTypeMapping TypeName="NawaDataModel.EODTaskLog">
+              <MappingFragment StoreEntitySet="EODTaskLog">
+                <ScalarProperty Name="PK_EODTaskLog_ID" ColumnName="PK_EODTaskLog_ID" />
+                <ScalarProperty Name="EODSchedulerLogID" ColumnName="EODSchedulerLogID" />
+                <ScalarProperty Name="FK_EODTaskID" ColumnName="FK_EODTaskID" />
+                <ScalarProperty Name="ExecuteBy" ColumnName="ExecuteBy" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Enddate" ColumnName="Enddate" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="FK_MsEODStatus_ID" ColumnName="FK_MsEODStatus_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SystemParameters">
+            <EntityTypeMapping TypeName="NawaDataModel.SystemParameter">
+              <MappingFragment StoreEntitySet="SystemParameter">
+                <ScalarProperty Name="EncriptionKey" ColumnName="EncriptionKey" />
+                <ScalarProperty Name="IsEncript" ColumnName="IsEncript" />
+                <ScalarProperty Name="fk_MFieldType_ID" ColumnName="fk_MFieldType_ID" />
+                <ScalarProperty Name="Hide" ColumnName="Hide" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="SettingValue" ColumnName="SettingValue" />
+                <ScalarProperty Name="SettingName" ColumnName="SettingName" />
+                <ScalarProperty Name="FK_SystemParameterGroup_ID" ColumnName="FK_SystemParameterGroup_ID" />
+                <ScalarProperty Name="PK_SystemParameter_ID" ColumnName="PK_SystemParameter_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogConsoleServices">
+            <EntityTypeMapping TypeName="NawaDataModel.LogConsoleService">
+              <MappingFragment StoreEntitySet="LogConsoleService">
+                <ScalarProperty Name="LogDescription" ColumnName="LogDescription" />
+                <ScalarProperty Name="LogInfo" ColumnName="LogInfo" />
+                <ScalarProperty Name="LogStatus" ColumnName="LogStatus" />
+                <ScalarProperty Name="LogCreatedDate" ColumnName="LogCreatedDate" />
+                <ScalarProperty Name="Pk_LogConsoleService_Id" ColumnName="Pk_LogConsoleService_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrxDafnom_Print">
+            <EntityTypeMapping TypeName="NawaDataModel.TrxDafnom_Print">
+              <MappingFragment StoreEntitySet="TrxDafnom_Print">
+                <ScalarProperty Name="AttachmentFileContent" ColumnName="AttachmentFileContent" />
+                <ScalarProperty Name="AttachmentFileName" ColumnName="AttachmentFileName" />
+                <ScalarProperty Name="Fk_TrxDafnom_Id" ColumnName="Fk_TrxDafnom_Id" />
+                <ScalarProperty Name="Pk_TrxDafnom_Print_Id" ColumnName="Pk_TrxDafnom_Print_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrxDafnom_OTP">
+            <EntityTypeMapping TypeName="NawaDataModel.TrxDafnom_OTP">
+              <MappingFragment StoreEntitySet="TrxDafnom_OTP">
+                <ScalarProperty Name="MsScheduleCode" ColumnName="MsScheduleCode" />
+                <ScalarProperty Name="NomorRekeningCASA" ColumnName="NomorRekeningCASA" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="LTSApprovalReason" ColumnName="LTSApprovalReason" />
+                <ScalarProperty Name="ApprovalReason" ColumnName="ApprovalReason" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Fk_MsStatusDokumen_Id" ColumnName="Fk_MsStatusDokumen_Id" />
+                <ScalarProperty Name="Fk_MsStatusOTP_Id" ColumnName="Fk_MsStatusOTP_Id" />
+                <ScalarProperty Name="BiayaRTGS" ColumnName="BiayaRTGS" />
+                <ScalarProperty Name="Fk_MsJenisPencairan_Id" ColumnName="Fk_MsJenisPencairan_Id" />
+                <ScalarProperty Name="TanggalDebetAngsuran" ColumnName="TanggalDebetAngsuran" />
+                <ScalarProperty Name="Fk_MsKondisiMargin_Id" ColumnName="Fk_MsKondisiMargin_Id" />
+                <ScalarProperty Name="NisbahBagiHasilNasabah" ColumnName="NisbahBagiHasilNasabah" />
+                <ScalarProperty Name="NisbahBagiHasilBank" ColumnName="NisbahBagiHasilBank" />
+                <ScalarProperty Name="MarginEquivalent" ColumnName="MarginEquivalent" />
+                <ScalarProperty Name="Nominal" ColumnName="Nominal" />
+                <ScalarProperty Name="PeriodEnd" ColumnName="PeriodEnd" />
+                <ScalarProperty Name="PeriodStart" ColumnName="PeriodStart" />
+                <ScalarProperty Name="TanggalPencairan" ColumnName="TanggalPencairan" />
+                <ScalarProperty Name="NoPromes" ColumnName="NoPromes" />
+                <ScalarProperty Name="Fk_MsJenisOTP_Id" ColumnName="Fk_MsJenisOTP_Id" />
+                <ScalarProperty Name="MsProductCode" ColumnName="MsProductCode" />
+                <ScalarProperty Name="MsMISCode" ColumnName="MsMISCode" />
+                <ScalarProperty Name="MsAccountOfficerCode" ColumnName="MsAccountOfficerCode" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Fk_TrxDafnom_Id" ColumnName="Fk_TrxDafnom_Id" />
+                <ScalarProperty Name="Pk_TrxDafnom_OTP_Id" ColumnName="Pk_TrxDafnom_OTP_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrxDafnoms">
+            <EntityTypeMapping TypeName="NawaDataModel.TrxDafnom">
+              <MappingFragment StoreEntitySet="TrxDafnom">
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="ApprovalReason" ColumnName="ApprovalReason" />
+                <ScalarProperty Name="Fk_MsStatusDokumen_Id" ColumnName="Fk_MsStatusDokumen_Id" />
+                <ScalarProperty Name="Fk_MsStatusDafnom_Id" ColumnName="Fk_MsStatusDafnom_Id" />
+                <ScalarProperty Name="TotalPengajuan" ColumnName="TotalPengajuan" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="Fk_TrxLimit_Id" ColumnName="Fk_TrxLimit_Id" />
+                <ScalarProperty Name="Fk_MsKoperasi_Id" ColumnName="Fk_MsKoperasi_Id" />
+                <ScalarProperty Name="Pk_TrxDafnom_Id" ColumnName="Pk_TrxDafnom_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrxOTP_NCBSFile">
+            <EntityTypeMapping TypeName="NawaDataModel.TrxOTP_NCBSFile">
+              <MappingFragment StoreEntitySet="TrxOTP_NCBSFile">
+                <ScalarProperty Name="ResponseFileContent" ColumnName="ResponseFileContent" />
+                <ScalarProperty Name="ResponseFileName" ColumnName="ResponseFileName" />
+                <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+                <ScalarProperty Name="ResponseDate" ColumnName="ResponseDate" />
+                <ScalarProperty Name="SendDate" ColumnName="SendDate" />
+                <ScalarProperty Name="GeneratedDate" ColumnName="GeneratedDate" />
+                <ScalarProperty Name="Fk_MsNCBSFileType_Id" ColumnName="Fk_MsNCBSFileType_Id" />
+                <ScalarProperty Name="Fk_MsStatusPengiriman_Id" ColumnName="Fk_MsStatusPengiriman_Id" />
+                <ScalarProperty Name="NCBSFileContent" ColumnName="NCBSFileContent" />
+                <ScalarProperty Name="NCBSFileName" ColumnName="NCBSFileName" />
+                <ScalarProperty Name="Fk_TrxDafnom_OTP_Id" ColumnName="Fk_TrxDafnom_OTP_Id" />
+                <ScalarProperty Name="Pk_TrxOTP_NCBSFile_Id" ColumnName="Pk_TrxOTP_NCBSFile_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrxOTP_Angsuran">
+            <EntityTypeMapping TypeName="NawaDataModel.TrxOTP_Angsuran">
+              <MappingFragment StoreEntitySet="TrxOTP_Angsuran">
+                <ScalarProperty Name="TotalAngsuran" ColumnName="TotalAngsuran" />
+                <ScalarProperty Name="AngsuranMargin" ColumnName="AngsuranMargin" />
+                <ScalarProperty Name="AngsuranPokok" ColumnName="AngsuranPokok" />
+                <ScalarProperty Name="SisaPokok" ColumnName="SisaPokok" />
+                <ScalarProperty Name="TanggalAngsuran" ColumnName="TanggalAngsuran" />
+                <ScalarProperty Name="AngsuranKe" ColumnName="AngsuranKe" />
+                <ScalarProperty Name="Fk_TrxDafnom_Detail_Id" ColumnName="Fk_TrxDafnom_Detail_Id" />
+                <ScalarProperty Name="Fk_TrxDafnom_OTP_Id" ColumnName="Fk_TrxDafnom_OTP_Id" />
+                <ScalarProperty Name="Pk_TrxOTP_Angsuran_Id" ColumnName="Pk_TrxOTP_Angsuran_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrxDafnom_Detail">
+            <EntityTypeMapping TypeName="NawaDataModel.TrxDafnom_Detail">
+              <MappingFragment StoreEntitySet="TrxDafnom_Detail">
+                <ScalarProperty Name="RekeningNomor" ColumnName="RekeningNomor" />
+                <ScalarProperty Name="RekeningNamaBank" ColumnName="RekeningNamaBank" />
+                <ScalarProperty Name="RekeningAtasNama" ColumnName="RekeningAtasNama" />
+                <ScalarProperty Name="IIR" ColumnName="IIR" />
+                <ScalarProperty Name="SisaJangkaWaktu" ColumnName="SisaJangkaWaktu" />
+                <ScalarProperty Name="Fk_MsSumberDana_Id" ColumnName="Fk_MsSumberDana_Id" />
+                <ScalarProperty Name="OutstandingTerakhir" ColumnName="OutstandingTerakhir" />
+                <ScalarProperty Name="AngsuranKoperasiYgDimiliki" ColumnName="AngsuranKoperasiYgDimiliki" />
+                <ScalarProperty Name="TakeHomePay" ColumnName="TakeHomePay" />
+                <ScalarProperty Name="Angsuran" ColumnName="Angsuran" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Plafond" ColumnName="Plafond" />
+                <ScalarProperty Name="Fk_MsTujuanPembiayaan_Id" ColumnName="Fk_MsTujuanPembiayaan_Id" />
+                <ScalarProperty Name="MasaKerja" ColumnName="MasaKerja" />
+                <ScalarProperty Name="TanggalPengangkatan" ColumnName="TanggalPengangkatan" />
+                <ScalarProperty Name="NoTelepon" ColumnName="NoTelepon" />
+                <ScalarProperty Name="TanggalLahir" ColumnName="TanggalLahir" />
+                <ScalarProperty Name="NIK" ColumnName="NIK" />
+                <ScalarProperty Name="NoKTP" ColumnName="NoKTP" />
+                <ScalarProperty Name="NamaKaryawan" ColumnName="NamaKaryawan" />
+                <ScalarProperty Name="Fk_TrxDafnom_OTP_Id" ColumnName="Fk_TrxDafnom_OTP_Id" />
+                <ScalarProperty Name="Fk_TrxDafnom_Id" ColumnName="Fk_TrxDafnom_Id" />
+                <ScalarProperty Name="Pk_TrxDafnom_Detail_Id" ColumnName="Pk_TrxDafnom_Detail_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vw_MigrasiAngsuran">
+            <EntityTypeMapping TypeName="NawaDataModel.Vw_MigrasiAngsuran">
+              <MappingFragment StoreEntitySet="Vw_MigrasiAngsuran">
+                <ScalarProperty Name="Pk_TrxDafnom_OTP_Id" ColumnName="Pk_TrxDafnom_OTP_Id" />
+                <ScalarProperty Name="MarginEquivalent" ColumnName="MarginEquivalent" />
+                <ScalarProperty Name="NomorRekeningCASA" ColumnName="NomorRekeningCASA" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="LTSApprovalReason" ColumnName="LTSApprovalReason" />
+                <ScalarProperty Name="ApprovalReason" ColumnName="ApprovalReason" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Fk_MsStatusDokumen_Id" ColumnName="Fk_MsStatusDokumen_Id" />
+                <ScalarProperty Name="Fk_MsStatusOTP_Id" ColumnName="Fk_MsStatusOTP_Id" />
+                <ScalarProperty Name="Fk_MsJenisPencairan_Id" ColumnName="Fk_MsJenisPencairan_Id" />
+                <ScalarProperty Name="TanggalDebetAngsuran" ColumnName="TanggalDebetAngsuran" />
+                <ScalarProperty Name="Fk_MsKondisiMargin_Id" ColumnName="Fk_MsKondisiMargin_Id" />
+                <ScalarProperty Name="NisbahBagiHasilNasabah" ColumnName="NisbahBagiHasilNasabah" />
+                <ScalarProperty Name="NisbahBagiHasilBank" ColumnName="NisbahBagiHasilBank" />
+                <ScalarProperty Name="Nominal" ColumnName="Nominal" />
+                <ScalarProperty Name="TanggalPencairan" ColumnName="TanggalPencairan" />
+                <ScalarProperty Name="Fk_MsJenisOTP_Id" ColumnName="Fk_MsJenisOTP_Id" />
+                <ScalarProperty Name="Tenor" ColumnName="Tenor" />
+                <ScalarProperty Name="Fk_TrxDafnom_Id" ColumnName="Fk_TrxDafnom_Id" />
+                <ScalarProperty Name="Batch" ColumnName="Batch" />
+                <ScalarProperty Name="LimitCode" ColumnName="LimitCode" />
+                <ScalarProperty Name="CIFNo" ColumnName="CIFNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NawaDataETLConfigurations">
+            <EntityTypeMapping TypeName="NawaDataModel.NawaDataETLConfiguration">
+              <MappingFragment StoreEntitySet="NawaDataETLConfigurations">
+                <ScalarProperty Name="ConfiguredValueType" ColumnName="ConfiguredValueType" />
+                <ScalarProperty Name="PackagePath" ColumnName="PackagePath" />
+                <ScalarProperty Name="ConfiguredValue" ColumnName="ConfiguredValue" />
+                <ScalarProperty Name="ConfigurationFilter" ColumnName="ConfigurationFilter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrxOTP_Pelunasan">
+            <EntityTypeMapping TypeName="NawaDataModel.TrxOTP_Pelunasan">
+              <MappingFragment StoreEntitySet="TrxOTP_Pelunasan">
+                <ScalarProperty Name="No_Urut" ColumnName="No_Urut" />
+                <ScalarProperty Name="TunggakanDenda" ColumnName="TunggakanDenda" />
+                <ScalarProperty Name="TunggakanMargin" ColumnName="TunggakanMargin" />
+                <ScalarProperty Name="TotalMarginBerjalan" ColumnName="TotalMarginBerjalan" />
+                <ScalarProperty Name="TotalOutstanding" ColumnName="TotalOutstanding" />
+                <ScalarProperty Name="ApprovalReason" ColumnName="ApprovalReason" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Fk_MsStatusDokumen_Id" ColumnName="Fk_MsStatusDokumen_Id" />
+                <ScalarProperty Name="Fk_MsStatusPelunasan_Id" ColumnName="Fk_MsStatusPelunasan_Id" />
+                <ScalarProperty Name="Fk_MsJenisRecalculatePelunasan_Id" ColumnName="Fk_MsJenisRecalculatePelunasan_Id" />
+                <ScalarProperty Name="TotalPelunasan" ColumnName="TotalPelunasan" />
+                <ScalarProperty Name="Fk_MsJenisOTPPelunasan_Id" ColumnName="Fk_MsJenisOTPPelunasan_Id" />
+                <ScalarProperty Name="Fk_TrxDafnom_OTP_Id" ColumnName="Fk_TrxDafnom_OTP_Id" />
+                <ScalarProperty Name="Pk_TrxOTP_Pelunasan_Id" ColumnName="Pk_TrxOTP_Pelunasan_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TrxLimits">
+            <EntityTypeMapping TypeName="NawaDataModel.TrxLimit">
+              <MappingFragment StoreEntitySet="TrxLimit">
+                <ScalarProperty Name="ScheduleCode" ColumnName="ScheduleCode" />
+                <ScalarProperty Name="CappingIIRPercent" ColumnName="CappingIIRPercent" />
+                <ScalarProperty Name="CappingIIR" ColumnName="CappingIIR" />
+                <ScalarProperty Name="CappingPlafonPercent" ColumnName="CappingPlafonPercent" />
+                <ScalarProperty Name="CappingPlafon" ColumnName="CappingPlafon" />
+                <ScalarProperty Name="CappingDeviasi" ColumnName="CappingDeviasi" />
+                <ScalarProperty Name="SisaLimit" ColumnName="SisaLimit" />
+                <ScalarProperty Name="MsBranchCode" ColumnName="MsBranchCode" />
+                <ScalarProperty Name="ParentLimitCode" ColumnName="ParentLimitCode" />
+                <ScalarProperty Name="ProductCodeNCBS" ColumnName="ProductCodeNCBS" />
+                <ScalarProperty Name="ProductCodeMIS" ColumnName="ProductCodeMIS" />
+                <ScalarProperty Name="SukuBunga" ColumnName="SukuBunga" />
+                <ScalarProperty Name="Margin" ColumnName="Margin" />
+                <ScalarProperty Name="BookingLoan" ColumnName="BookingLoan" />
+                <ScalarProperty Name="LimitCode" ColumnName="LimitCode" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ApprovedBy" ColumnName="ApprovedBy" />
+                <ScalarProperty Name="LastUpdateBy" ColumnName="LastUpdateBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Fk_MsStatusLimit_Id" ColumnName="Fk_MsStatusLimit_Id" />
+                <ScalarProperty Name="Outstanding" ColumnName="Outstanding" />
+                <ScalarProperty Name="Plafond" ColumnName="Plafond" />
+                <ScalarProperty Name="TanggalTarikMax" ColumnName="TanggalTarikMax" />
+                <ScalarProperty Name="TanggalTenorMax" ColumnName="TanggalTenorMax" />
+                <ScalarProperty Name="NoSPK" ColumnName="NoSPK" />
+                <ScalarProperty Name="Fk_MsKoperasi_Id" ColumnName="Fk_MsKoperasi_Id" />
+                <ScalarProperty Name="Pk_TrxLimit_Id" ColumnName="Pk_TrxLimit_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

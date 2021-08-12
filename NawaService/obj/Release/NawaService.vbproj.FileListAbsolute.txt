@@ -1,0 +1,11 @@
+D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Release\NawaDataService.exe.config
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Release\NawaDataService.Resources.resources
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Release\NawaDataService.NawaDataConsole.resources
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Release\NawaDataService.ProjectInstaller.resources
+D:\Project\SAFV\NawaService\NawaService\NawaService\obj\Release\NawaService.vbproj.GenerateResource.Cache
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\bin\Release\NawaDataService.exe.config
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Release\NawaService.vbprojResolveAssemblyReference.cache
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Release\NawaDataService.Resources.resources
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Release\NawaDataService.NawaDataConsole.resources
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Release\NawaDataService.ProjectInstaller.resources
+D:\Kunto\Project SAFV\SAFV\NawaService\NawaService\obj\Release\NawaService.vbproj.GenerateResource.Cache

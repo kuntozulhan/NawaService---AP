@@ -1,0 +1,54 @@
+Using username "hendra".
+Using username "hendra".
+Using username "hendra".
+Using username "hendra".
+Using username "hendra".
+Using username "hendra".
+The process cannot access the file because it is being used by another process.
+The process cannot access the file because it is being used by another process.
+Using username "hendra".
+Using username "hendra".
+Fatal: Network error: Connection refused
+Fatal: Network error: Connection refused
+Fatal: Network error: Connection refused
+Fatal: Network error: Connection refused
+WARNING - POTENTIAL SECURITY BREACH!
+The server's host key does not match the one PuTTY has
+cached in the registry. This means that either the
+server administrator has changed the host key, or you
+have actually connected to another computer pretending
+to be the server.
+The new rsa2 key fingerprint is:
+ssh-rsa 1024 17:fc:0a:1b:82:a6:c9:31:ee:a7:23:5c:86:4e:04:ee
+If you were expecting this change and trust the new key,
+enter "y" to update PuTTY's cache and continue connecting.
+If you want to carry on connecting but without updating
+the cache, enter "n".
+If you want to abandon the connection completely, press
+Return to cancel. Pressing Return is the ONLY guaranteed
+safe choice.
+Update cached key? (y/n, Return cancels connection) Using username "hendra".
+Using username "hendra".
+Fatal: Network error: Connection refused
+Fatal: Network error: Connection refused
+WARNING - POTENTIAL SECURITY BREACH!
+The server's host key does not match the one PuTTY has
+cached in the registry. This means that either the
+server administrator has changed the host key, or you
+have actually connected to another computer pretending
+to be the server.
+The new rsa2 key fingerprint is:
+ssh-rsa 1024 17:fc:0a:1b:82:a6:c9:31:ee:a7:23:5c:86:4e:04:ee
+If you were expecting this change and trust the new key,
+enter "y" to update PuTTY's cache and continue connecting.
+If you want to carry on connecting but without updating
+the cache, enter "n".
+If you want to abandon the connection completely, press
+Return to cancel. Pressing Return is the ONLY guaranteed
+safe choice.
+Update cached key? (y/n, Return cancels connection) Using username "hendra".
+Fatal: Network error: Connection refused
+Fatal: Network error: Connection refused
+Fatal: Network error: Connection refused
+Fatal: Network error: Connection refused
+Fatal: Network error: Connection refused

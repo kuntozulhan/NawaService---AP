@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eeb18b53ba0148469cc6aab570b9b59b" Name="Diagram1" ZoomLevel="60">
+        <EntityTypeShape EntityType="NawaDataModel.EODScheduler" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODSchedulerDetail" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODSchedulerLog" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTask" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTaskDetail" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTaskDetailLog" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTaskDetailType" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.EODTaskLog" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NawaDataModel.SystemParameter" Width="1.5" PointX="8.625" PointY="0.75" />
+        <EntityTypeShape EntityType="NawaDataModel.LogConsoleService" Width="1.5" PointX="1.75" PointY="8.625" />
+        <EntityTypeShape EntityType="NawaDataModel.TrxDafnom_Print" Width="1.5" PointX="5.375" PointY="7.75" />
+        <EntityTypeShape EntityType="NawaDataModel.TrxDafnom_OTP" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="NawaDataModel.TrxDafnom" Width="1.5" PointX="8.125" PointY="11.25" />
+        <AssociationConnector Association="NawaDataModel.FK_TrxDafnom_OTP_TrxDafnom" />
+        <EntityTypeShape EntityType="NawaDataModel.TrxOTP_NCBSFile" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="NawaDataModel.TrxOTP_Angsuran" Width="1.5" PointX="7.375" PointY="7.75" />
+        <EntityTypeShape EntityType="NawaDataModel.TrxDafnom_Detail" Width="1.5" PointX="12.625" PointY="8.125" />
+        <AssociationConnector Association="NawaDataModel.FK_TrxDafnom_Detail_TrxDafnom" />
+        <AssociationConnector Association="NawaDataModel.FK_TrxDafnom_Detail_TrxDafnom_OTP" />
+        <EntityTypeShape EntityType="NawaDataModel.Vw_MigrasiAngsuran" Width="1.5" PointX="10.375" PointY="14.75" />
+        <EntityTypeShape EntityType="NawaDataModel.NawaDataETLConfiguration" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NawaDataModel.TrxOTP_Pelunasan" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="NawaDataModel.TrxLimit" Width="1.5" PointX="4.375" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

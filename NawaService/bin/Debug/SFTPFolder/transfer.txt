@@ -1,0 +1,1 @@
+put "D:\Project\SAFV\NawaService\NawaService\NawaService\bin\Debug\SFTPFolder\FileNCBS\Disbursement 234456R Batch 24.txt"
